@@ -44,7 +44,10 @@ following:
 - a [GitHub](https://github.com/) account, for the packaging exercise on day 2
 - a plain text editor you are comfortable with
 
-From the repository root, create and activate the teaching environment with:
+Install a conda distribution first (for example
+[Miniforge](https://conda-forge.org/download/) or
+[Miniconda](https://www.anaconda.com/docs/getting-started/miniconda/main)). Then, from the
+repository root, create and activate the teaching environment:
 
 ```bash
 conda env create -f environment.yml
