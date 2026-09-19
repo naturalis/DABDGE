@@ -22,4 +22,5 @@ if not records:
     raise SystemExit(f"No FASTA records found in {sys.argv[1]}")
 
 aln = MultipleSeqAlignment([records[k] for k in sorted(records)])
-AlignIO.write(aln, sys.argv[2], sys.argv[3])
+with open(sys.argv[2], "w") as handle:
+    AlignIO.write(aln, handle, sys.argv[3])
