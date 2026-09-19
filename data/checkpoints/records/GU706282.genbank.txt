@@ -1,0 +1,15 @@
+LOCUS       GU706282                 565 bp    DNA     linear   INV 01-JUL-2010
+DEFINITION  Danaus plexippus cytochrome oxidase subunit I (COI) gene, partial cds.
+ACCESSION   GU706282
+VERSION     GU706282.1
+KEYWORDS    BARCODE.
+SOURCE      mitochondrion Danaus plexippus (monarch butterfly)
+  ORGANISM  Danaus plexippus
+            Eukaryota; Metazoa; Arthropoda; Insecta; Lepidoptera; Nymphalidae.
+FEATURES             Location/Qualifiers
+     source          1..565
+                     /organism="Danaus plexippus"
+                     /country="Mexico"
+ORIGIN
+        1 aacattatat tttatttttg gagcttgatc agctatagtt ggtactgcta taagagtatt
+//

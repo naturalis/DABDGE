@@ -1,0 +1,13 @@
+ID   GU706282; SV 1; linear; genomic DNA; STD; INV; 565 BP.
+XX
+AC   GU706282;
+XX
+DE   Danaus plexippus cytochrome oxidase subunit I (COI) gene, partial cds
+XX
+OS   Danaus plexippus (monarch butterfly)
+OC   Eukaryota; Metazoa; Arthropoda; Insecta; Lepidoptera; Nymphalidae.
+FT   source          1..565
+FT                   /organism="Danaus plexippus"
+SQ   Sequence 565 BP; 167 A; 117 C; 104 G; 177 T; 0 other;
+     aacattatattttatttttggagcttgatcagctatagttggtactgctataagagtattaat      60
+//

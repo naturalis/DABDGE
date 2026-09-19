@@ -1,0 +1,35 @@
+{
+  "source": "DataCite DOI API",
+  "url": "https://api.datacite.org/dois/10.5061/dryad.4sd51d4b",
+  "retrieval_date": "2026-09-19",
+  "license": "CC0-1.0",
+  "response": {
+    "data": {
+      "id": "10.5061/DRYAD.4SD51D4B",
+      "type": "dois",
+      "attributes": {
+        "titles": [
+          {
+            "title": "Example teaching deposition for DABDGE"
+          }
+        ],
+        "rightsList": [
+          {
+            "rights": "CC0 1.0"
+          }
+        ],
+        "relatedIdentifiers": [
+          {
+            "relationType": "IsReferencedBy",
+            "relatedIdentifier": "GU706282.1"
+          }
+        ],
+        "descriptions": [
+          {
+            "description": "Teaching cache for metadata provenance exercises."
+          }
+        ]
+      }
+    }
+  }
+}

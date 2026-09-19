@@ -1,0 +1,20 @@
+{
+  "source": "UniProt REST",
+  "url": "https://rest.uniprot.org/uniprotkb/P00395.json",
+  "retrieval_date": "2026-09-19",
+  "license": "CC0-1.0",
+  "response": {
+    "primaryAccession": "P00395",
+    "entryType": "UniProtKB reviewed (Swiss-Prot)",
+    "proteinDescription": {
+      "recommendedName": {
+        "fullName": {
+          "value": "Cytochrome c oxidase subunit 1"
+        }
+      }
+    },
+    "organism": {
+      "scientificName": "Danaus plexippus"
+    }
+  }
+}

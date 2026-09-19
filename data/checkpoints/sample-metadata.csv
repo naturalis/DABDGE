@@ -1,0 +1,13 @@
+sample_id,site,country,date,lat,lon,oiling_status,preservation_method,reads_pass_qc,specimen_id,taxon,sequence_accession
+DPP-001,El Rosario Reserve,Mexico,2024-11-04,19.6164,-100.2895,none,ethanol_96,184233,NAT-DPP-0001,Danaus plexippus,GU706282.1
+DPP-002,Sierra Chincua,Mexico,2024-11-05,19.6716,-100.2782,none,ethanol_96,176020,NAT-DPP-0002,Danaus plexippus,GU706282.1
+DPP-003,Morro Bay,United States,2025-02-17,35.3658,-120.8499,trace,RNAlater,168441,NAT-DPP-0003,Danaus plexippus,GU706282.1
+DPP-004,Pismo Beach Dunes,United States,2025-02-18,35.1019,-120.6413,trace,RNAlater,170112,NAT-DPP-0004,Danaus plexippus,GU706282.1
+DPP-005,Santa Cruz Wharf,United States,2025-03-01,36.9613,-122.0129,none,ethanol_96,193882,NAT-DPP-0005,Danaus plexippus,GU706282.1
+DPP-006,Point Reyes,United States,2025-03-03,38.0409,-122.9969,none,ethanol_96,181441,NAT-DPP-0006,Danaus plexippus,GU706282.1
+DPP-007,Monterey Bay,United States,2025-03-06,36.6189,-121.9016,none,ethanol_96,179508,NAT-DPP-0007,Danaus plexippus,GU706282.1
+DPP-008,Bodega Head,United States,2025-03-09,38.3182,-123.0725,none,ethanol_96,165001,NAT-DPP-0008,Danaus plexippus,GU706282.1
+DPP-009,Half Moon Bay,United States,2025-03-11,37.4636,-122.4286,trace,RNAlater,172233,NAT-DPP-0009,Danaus plexippus,GU706282.1
+DPP-010,Cape May Point,United States,2025-09-20,38.9365,-74.9652,none,ethanol_96,188004,NAT-DPP-0010,Danaus plexippus,GU706282.1
+DPP-011,Assateague Island,United States,2025-09-23,38.1987,-75.1538,none,ethanol_96,190775,NAT-DPP-0011,Danaus plexippus,GU706282.1
+DPP-012,Chincoteague NWR,United States,2025-09-24,37.9368,-75.3833,none,ethanol_96,186204,NAT-DPP-0012,Danaus plexippus,GU706282.1

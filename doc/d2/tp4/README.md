@@ -56,17 +56,17 @@ This is where most of the disagreement lives.
 ```r
 # GBIF backbone
 gbif <- fromJSON(paste0("https://api.gbif.org/v1/species/match",
-                        "?name=Cladosporium%20cladosporioides"))
+                        "?name=Danaus%20plexippus"))
 gbif$usageKey; gbif$status; gbif$matchType; gbif$confidence
 
 # WoRMS
 worms <- fromJSON(paste0(
   "https://www.marinespecies.org/rest/AphiaRecordsByName/",
-  "Cladosporium%20cladosporioides?like=false&marine_only=false"))
+  "Danaus%20plexippus?like=false&marine_only=false"))
 
 # GlobalNames verifier, across many sources at once
 gn <- fromJSON(paste0("https://verifier.globalnames.org/api/v1/verifications/",
-                      "Cladosporium%20cladosporioides"))
+                      "Danaus%20plexippus"))
 gn$names$bestResult |> as_tibble()
 ```
 **Intentional failure.** The WoRMS lookup in this example can return HTTP 204 (no content), and then
