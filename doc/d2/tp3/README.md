@@ -138,7 +138,7 @@ anc$results$ancestors
 Most GO annotations are electronic inference rather than direct experiment. An annotation without
 its evidence code is a rumour.
 
-### 9. Stretch: AI exercise (10 min)
+### 8. Stretch: AI exercise (10 min)
 
 Give an LLM a short list of GO terms and ask it to write the biological story.
 
