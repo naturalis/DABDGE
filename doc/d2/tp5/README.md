@@ -1,8 +1,9 @@
 TP2.5 Packaging, and the deposit you wish you had found
 =======================================================
 
-**Thursday 17:45-18:45, roughly 1 h.** No separate submission. The result is the container your Q3
-goes in, and the habit you carry into the project and the dissertation.
+**Thursday 17:45-18:45, roughly 1 h.** Submit a zip of this folder through
+`{{SUBMISSION_CHANNEL}}`. The result is the container your Q3 goes in, and the habit you carry into
+the project and the dissertation.
 
 This morning you audited somebody's deposit and found it wanting. It would be poor form to end the
 day with a folder that would fail the same audit. So spend the last hour making one that passes.
@@ -22,8 +23,7 @@ thing called `final2.csv`.
 
 ### 2. Give it a shape
 
-One layout, used consistently, beats a clever one. This is the same structure the whole master's will
-use:
+One layout, used consistently, beats a clever one. Use this structure for the folder you hand in:
 
 ```
 dabdge-w2/
@@ -81,45 +81,21 @@ prefixed `x_` and defined in `data/README.md`.
 ### 4. Say what the licence is
 
 An unlicensed deposit is legally unusable however open it looks. For teaching material and derived
-tables, CC0 or CC-BY is normal; for code, MIT or Apache-2.0.
-
-```bash
-curl -o LICENSE https://raw.githubusercontent.com/naturalis/DABDGE/master/LICENSE
-```
+tables, CC0 or CC-BY is normal; for code, MIT or Apache-2.0. Copy the licence text from the
+`LICENSE` file in the downloaded course materials into a file called `LICENSE` in your folder.
 
 > Your outputs are derived from sources with their own terms. Does your licence conflict with any of
 > them? This is not a rhetorical question and the answer is occasionally yes.
 
-### 5. Make it a repository
+### 5. Submit the folder
 
-```bash
-git init
-git add README.md LICENSE data scripts out report.qmd
-git commit -m "Week 2 practicals: retrieval, annotation, integration"
-```
+Zip `dabdge-w2/` when you are done. Submit the zip file through `{{SUBMISSION_CHANNEL}}`, with your
+name on it if that system does not add your name for you.
 
-> `git status` before every commit. Look at what you are about to add. Large downloaded files
-> normally do not belong in version control; a `.gitignore` entry plus the retrieval command in your
-> README beats a 500 MB commit.
+### 6. Audit your neighbour
 
-### 6. Contribute it back
-
-Fork [naturalis/DABDGE](https://github.com/naturalis/DABDGE), add your work under
-`students/<your-name>/`, and open a pull request.
-
-```bash
-git remote add origin git@github.com:<your-username>/DABDGE.git
-git push -u origin main
-```
-
-Then open the pull request on GitHub and describe, in two sentences, what you are contributing.
-
-> This is the smallest complete instance of the whole week: an identified, described, licensed,
-> versioned, citable thing that somebody else can pick up. Everything larger is this, repeated.
-
-### 7. Audit your neighbour
-
-Swap repository links with the person next to you and score theirs the way you scored the Dryad
+Swap folders with the person next to you, by USB stick, AirDrop, shared drive or whatever the room
+allows, and score theirs the way you scored the Dryad
 deposit this morning.
 
 | | Evidence | Pass, partial or fail |
@@ -133,7 +109,7 @@ deposit this morning.
 > other dataset you will ever audit. Ask them the questions you could not ask the authors this
 > morning.
 
-### 8. One thing to take with you
+### 7. One thing to take with you
 
 The deposit you audited this morning was made by competent people meeting the standards of their
 time. Yours will be audited by somebody in 2038 under standards that do not exist yet.
@@ -145,7 +121,8 @@ recoverable without it.
 Where this goes next
 --------------------
 
-- **Q3** is due end of day Friday. Put it in this repository, not in a separate folder.
+- **Q3** is due end of day Friday. Submit it through `{{SUBMISSION_CHANNEL}}`, not in a separate
+  folder.
 - **Week 3** (Pedro) computes on records of exactly this kind, in phyloseq. The identifiers you have
   been fussing over are the ones that have to line up.
 - **Week 4** (Filipe) curates barcode records against the same principles, under the name QA/QC, and
