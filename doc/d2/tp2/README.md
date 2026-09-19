@@ -134,21 +134,6 @@ dc$data$attributes$descriptions |> substr(1, 300)
 > A DOI that resolves makes a deposit findable. What would have to be in `relatedIdentifiers` for the
 > three deposits to be findable *as one study*? Is it there?
 
-### 7. AI exercise (20 min)
-
-Give an LLM the accession or identifier of your chosen record and ask it to describe the record:
-where it was collected, what the organism is, who deposited it, what the sequence encodes.
-
-Then check every claim against the record you actually retrieved.
-
-> Find at least one statement that is wrong, unsupported, or more confident than the underlying
-> record allows. Common failure modes: coordinates invented to a precision the record does not have,
-> a collector or a date filled in plausibly, a taxonomic authority attached to the wrong name, and an
-> accession that does not exist at all.
-
-Write down which tool you used, what you asked it, and what you caught. This goes in your submission
-and feeds into the cross-module reflection in week 4.
-
 Q2: metadata-quality mini-report
 --------------------------------
 
