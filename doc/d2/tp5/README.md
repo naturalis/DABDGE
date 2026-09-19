@@ -59,7 +59,7 @@ Work from the practicals of 24 September 2026.
 
 | File | Source | Retrieved | Licence |
 | ---- | ------ | --------- | ------- |
-| `data/Danaus.fas` | BOLD API, `taxon=Danaus` | 2026-09-24 | see BOLD terms |
+| `data/Danaus.fas` | archived BOLD v3 teaching artefact from `naturalis/DABDGE` | 2026-09-24 | see BOLD terms |
 | `data/sample-metadata.csv` | supplied in the course repository | 2026-09-24 | CC0 |
 
 ## Scripts

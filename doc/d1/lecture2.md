@@ -96,23 +96,28 @@ of clicks is not.
 BOLD: three record types in one
 -------------------------------
 
-[BOLD](https://www.boldsystems.org/) is worth looking at structurally, because a single BOLD record
+[BOLD](https://portal.boldsystems.org/) is worth looking at structurally, because a single BOLD record
 binds together things that live in separate databases everywhere else:
 
 - **specimen** data: voucher, collector, locality, coordinates, images
 - **taxonomy**: the identification, and who made it
 - **genetic** data: sequences, the marker, the primers, the trace files
 
-```bash
-# taxon data as JSON
-curl "https://www.boldsystems.org/index.php/API_Tax/TaxonSearch?taxName=Danaus"
+```r
+library(BOLDconnectR)
 
-# all sequences for a taxon as FASTA
-curl "https://www.boldsystems.org/index.php/API_Public/sequence?taxon=Danaus"
+# public ids from BOLD v5
+bold_ids <- bold.public.search(taxonomy = list("Danaus"))
+head(bold_ids)
+
+# full BCDM records for selected ids (with API key configured via bold.apikey())
+bold <- bold.fetch(get_by = "processid",
+                   identifiers = head(bold_ids$processid, 200))
+head(dplyr::select(bold, processid, marker_code, insdc_acs, genus, species))
 ```
 
-The returned FASTA has the pipe-delimited definition line we complained about this morning, which
-means simple command line tools get you surprisingly far:
+In BOLD v5, raw downloads are in BCDM tables (JSON/TSV), not FASTA. For the FASTA defline exercise in
+TP2.1 we therefore use an archived v3-era file as a teaching artefact:
 
 ```bash
 grep '>' Danaus.fas | cut -f 3 -d '|' | sort | uniq
@@ -122,9 +127,9 @@ That tells you which markers are present. It also breaks as soon as you need the
 themselves, because FASTA records span an unpredictable number of lines. Tomorrow morning you will
 reach for Biopython at exactly that point.
 
-**Scope note.** We are looking at BOLD's structure and API only. Its content, the BIN concept,
-curation with BAGS and the analysis tools are Filipe's territory in week 4, and they are the
-substance of your final integrative report.
+**Scope note.** We are looking at BOLD's structure and retrieval plumbing only (now through
+BOLDconnectR on the v5 API). Its content, the BIN concept, curation with BAGS and the analysis tools
+are Filipe's territory in week 4, and they are the substance of your final integrative report.
 
 A name is not an identifier
 ---------------------------

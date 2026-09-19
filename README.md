@@ -52,6 +52,7 @@ repository root, create and activate the teaching environment:
 ```bash
 conda env create -f environment.yml
 conda activate dabdge
+R -q -e "if (!requireNamespace('BOLDconnectR', quietly = TRUE)) remotes::install_github('boldsystems-central/BOLDconnectR')"
 ```
 
 No accounts are needed for the public databases used here. All retrieval is done over public APIs.
