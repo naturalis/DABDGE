@@ -352,11 +352,14 @@ Tomorrow
 
 Eight hours of hands-on work, in five blocks:
 
-- **TP2.1** sequence handling with Biopython, and similarity intuition
-- **TP2.2** retrieval from public databases, and the metadata audit behind **Q2**
-- **TP2.3** annotation with Darwin Core and GO
-- **TP2.4** cross-database integration and name reconciliation, drafting **Q3**
-- **TP2.5** packaging your work so that it would pass the audit you did today
+- **09:00-09:15** setup and orientation
+- **09:15-10:30 TP2.1** sequence handling with Biopython, and similarity intuition from a supplied
+  hits table
+- **10:45-12:35 TP2.2** retrieval from public databases, and the metadata audit behind **Q2**
+- **12:35-13:00** protected writing time for **Q2**, not extra practical time
+- **14:00-15:15 TP2.3** annotation with Darwin Core and GO
+- **15:30-17:10 TP2.4** cross-database integration and name reconciliation, drafting **Q3**
+- **17:20-18:00 TP2.5** packaging your work so that it would pass the audit you did today
 
 Bring the sceptical reading you practised this afternoon. Every record you open tomorrow was made by
 someone, for a purpose that was not yours.

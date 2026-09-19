@@ -1,7 +1,7 @@
 TP2.4 Cross-database integration
 ================================
 
-**Thursday 15:45-17:45, roughly 2 h. Q3 drafted in class, submitted end of day Friday.**
+**Thursday 15:30-17:10, roughly 1 h 40 min. Q3 drafted in class, submitted end of day Friday.**
 
 One specimen, or one sample, described in several resources at once. Your job is to establish that
 they are the same thing, and then to write down every way in which the resources disagree about it.
@@ -10,14 +10,8 @@ The disagreements are the result. Nobody is being careless.
 
 ### 1. Pick your starting point
 
-Choose one of these.
-
-- a **specimen** with a barcode record: start from BOLD, follow the sequence to GenBank, the taxon to
-  GBIF and WoRMS
-- a **sample** from a published study: start from the deposit, follow to the sequence archive and to
-  the taxa it reports
-- a **taxon** you met this morning: start from the name and see how many resources hold something
-  about it
+Use the prepared specimen chain for this block: start from a BOLD record for *Danaus plexippus*,
+follow the sequence to GenBank, then follow the taxon into GBIF and WoRMS.
 
 Write down your starting identifier before you do anything else. Everything hangs off it.
 
@@ -39,7 +33,9 @@ bold <- bold.fetch(
 
 > BOLD v5 is a tokenised API under `portal.boldsystems.org`; `bold.public.search()` wraps the first
 > query stages and `bold.fetch()` wraps retrieval. If `bold.fetch()` fails because your account has no
-> key, keep `bold_ids` and continue with another starting point from this list.
+> key, ask for the front-led copy of the prepared chain and continue from that.
+
+<!-- TODO: RV to review -->
 
 Follow the outbound links. A BOLD record often carries a GenBank accession; a GenBank record often
 carries a specimen voucher; a GBIF occurrence carries a dataset key and sometimes an
@@ -81,16 +77,13 @@ Now try a taxon that does not belong in one of them.
 ### 4. Tabulate the disagreements
 
 Build this table for your chosen entity. One row per point of comparison, one column per resource.
+Four well-checked rows beat eight guessed ones.
 
 | Attribute | Resource A | Resource B | Resource C | Agree? |
 | --------- | ---------- | ---------- | ---------- | ------ |
 | identifier | | | | n/a |
 | accepted name | | | | |
-| authority | | | | |
-| rank | | | | |
 | coordinates | | | | |
-| collection date | | | | |
-| determiner | | | | |
 | last modified | | | | |
 
 Typical findings, none of which is anybody's fault:
@@ -118,17 +111,15 @@ Pick your linked record as a whole and name:
 Be specific. "Not very interoperable" is not an answer. "The BOLD record carries the GenBank
 accession as free text inside a notes field, so no machine can follow the link" is.
 
-### 7. AI exercise (20 min)
+### 7. Front-led demonstration (10 min)
 
-Give an LLM the two conflicting versions of your record and ask it to reconcile them into a single
-authoritative record.
+From the front, compare an LLM reconciliation of the two conflicting versions of your record with
+the sources it had to choose from.
 
 > Then ask the question it did not ask itself: on what evidence did it choose? A reconciliation is a
 > claim about which source is right, and the sources do not say. Look for silent averaging of
 > coordinates, a preference for the most recent-looking record, or a taxonomy asserted with an
 > authority that appears in none of your sources.
-
-Note what you found.
 
 Q3: cross-database integration mini-report
 ------------------------------------------

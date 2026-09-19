@@ -1,12 +1,13 @@
 TP2.5 Packaging, and the deposit you wish you had found
 =======================================================
 
-**Thursday 17:45-18:45, roughly 1 h.** Submit a zip of this folder through
+**Thursday 17:20-18:00, roughly 40 min.** Submit a zip of this folder through
 `{{SUBMISSION_CHANNEL}}`. The result is the container your Q3 goes in, and the habit you carry into
 the project and the dissertation.
 
 This morning you audited somebody's deposit and found it wanting. It would be poor form to end the
-day with a folder that would fail the same audit. So spend the last hour making one that passes.
+day with a folder that would fail the same audit. So spend the last forty minutes making one that
+passes.
 
 ### 1. Look at what you have
 
@@ -66,12 +67,12 @@ Work from the practicals of 24 September 2026.
 
 Run in this order:
 
-1. `scripts/filter_marker.py` — selects one marker from a multi-marker FASTA
-2. `scripts/summarise.py` — per-record length and GC, to `out/`
+1. `scripts/filter_marker.py` - selects one marker from a multi-marker FASTA
+2. `scripts/summarise.py` - per-record length and GC, to `out/`
 
 ## Outputs
 
-`out/samples-dwc.csv` — sample table mapped to Darwin Core. Columns not in Darwin Core are
+`out/samples-dwc.csv` - sample table mapped to Darwin Core. Columns not in Darwin Core are
 prefixed `x_` and defined in `data/README.md`.
 ```
 
@@ -105,7 +106,7 @@ deposit this morning.
 | Interoperable | | |
 | Reusable | | |
 
-> You have twenty minutes and they are in the room, which is a considerable advantage over every
+> You have five minutes and they are in the room, which is a considerable advantage over every
 > other dataset you will ever audit. Ask them the questions you could not ask the authors this
 > morning.
 
