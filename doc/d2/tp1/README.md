@@ -30,8 +30,7 @@ If that fails, create and activate the conda environment described in
 ### 1. Get some sequences
 
 We will use barcode sequences for a genus with plenty of records, so that the exercises have
-something to bite on. Use the anchor-site taxon if one has been assigned to you; otherwise use
-*Danaus*.
+something to bite on. Use *Danaus*.
 
 ```bash
 curl -o data/Danaus.fas "https://www.boldsystems.org/index.php/API_Public/sequence?taxon=Danaus"
