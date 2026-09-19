@@ -5,10 +5,10 @@ channels:
 dependencies:
   - python=3.11
   - biopython
-  - blast
-  - r-base
-  - r-remotes
-  - r-jsonlite
-  - r-dplyr
-  - r-readr
-  - r-ggplot2
+ # - blast
+ # - r-base
+ # - r-remotes
+ # - r-jsonlite
+ # - r-dplyr
+ # - r-readr
+ # - r-ggplot2
