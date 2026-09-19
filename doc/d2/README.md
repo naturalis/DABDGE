@@ -11,6 +11,11 @@ is the same specimen, and then leave behind a folder that somebody else could us
 
 It is a long day, so it is broken into five blocks with breaks between them. Everything you make
 goes into one working directory, `~/dabdge-w2`, because the last forty minutes package it.
+You work in pairs at one laptop and swap at the keyboard between blocks.
+
+Each block marks steps as Core or Stretch. Stretch steps are optional. If you complete the Core
+steps, you have completed the day. All material stays available afterwards if you want to come back
+to the Stretch parts.
 
 Practicals
 ----------

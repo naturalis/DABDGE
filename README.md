@@ -136,6 +136,7 @@ given.
 - `data/anchor/` - records from the CU's recurring coastal and marine anchor site
 - `data/worked-example/` - the multi-deposit worked example used in the day 1 lectures and in TP2.2
 - `data/toy-db/` - small reference database for the similarity exercise in TP2.1
+- `data/checkpoints/` - checkpoint files and folders used to rejoin each Day 2 practical block
 
 All datasets in this repository are subsets, prepared for teaching, of openly licensed published
 data. Provenance and licence for each are recorded in the README of its directory, which is itself
