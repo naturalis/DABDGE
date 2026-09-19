@@ -82,24 +82,31 @@ Protect a 10-15 minute break in the middle of each block.
 
 #### Day 2 - Retrieval, annotation and integration (Thu 24 September 2026, 8 h TP)
 
-- **09:00-13:00**
-  - [TP2.1 Sequence handling with Biopython](doc/d2/tp1) (~1.5 h) - FASTA in and out, basic
-    statistics, translation, marker filtering; BLAST-style similarity intuition against a toy
-    reference database
-  - [TP2.2 Retrieval](doc/d2/tp2) (~2 h) - pull a gene record and a species occurrence record from
-    public databases, inspect provenance and metadata. **Submit Q2 by end of day.**
-- **14:00-18:00**
-  - [TP2.3 Annotation with standard vocabularies](doc/d2/tp3) (~1.5 h) - map a real sample table
-    onto Darwin Core; read a GO term as a defined class and walk its subgraph.
-    *AI exercise: critique LLM-generated metadata fields.*
-  - [TP2.4 Cross-database integration](doc/d2/tp4) (~2 h) - link one sample or specimen across two
-    or more resources, reconcile the names, list the discrepancies. **Q3 drafted in class.**
-    *AI exercise: LLM cross-source disambiguation.*
-  - [TP2.5 FAIR packaging wrap](doc/d2/tp5) (~1 h) - package the day's work as a deposit that would
-    pass the audit you performed this morning, then submit a zip through
-    `{{SUBMISSION_CHANNEL}}`.
+| | Block | Time | Minutes |
+| --- | --- | --- | --- |
+| | Setup and orientation | 09:00-09:15 | 15 |
+| TP2.1 | [Sequence handling with Biopython](doc/d2/tp1) | 09:15-10:30 | 75 |
+| | Break | 10:30-10:45 | |
+| TP2.2 | [Retrieval and the metadata audit](doc/d2/tp2) | 10:45-12:35 | 110 |
+| | Q2 written in class | 12:35-13:00 | 25 |
+| | Lunch | 13:00-14:00 | |
+| TP2.3 | [Annotation with standard vocabularies](doc/d2/tp3) | 14:00-15:15 | 75 |
+| | Break | 15:15-15:30 | |
+| TP2.4 | [Cross-database integration](doc/d2/tp4) | 15:30-17:10 | 100 |
+| | Break | 17:10-17:20 | |
+| TP2.5 | [Packaging](doc/d2/tp5) | 17:20-18:00 | 40 |
 
-Plan for two clear breaks, mid-morning and mid-afternoon. Thursday is a long day.
+- **TP2.1** FASTA in and out, basic statistics, translation, marker filtering, then similarity
+  reading from a supplied hits table.
+- **TP2.2** pull a gene record and an occurrence record from public databases, inspect provenance and
+  metadata, and complete the audit that feeds **Q2**. The **12:35-13:00** writing period is
+  protected time for Q2, not an extension of the practical.
+- **TP2.3** map a real sample table onto Darwin Core, then read a GO term as a defined class and
+  walk its subgraph, ending with a short GO identifier check.
+- **TP2.4** link one specimen across resources, reconcile the names, list the discrepancies, and
+  draft **Q3** in class.
+- **TP2.5** package the day's work as a deposit that would pass the morning audit, then submit a
+  zip through `{{SUBMISSION_CHANNEL}}`.
 
 ### Assessment
 

@@ -1,8 +1,8 @@
 TP2.1 Sequence handling with Biopython
 ======================================
 
-**Thursday 09:00-10:30, roughly 1.5 h.** No submission. The habits you build here are used in every
-block that follows.
+**Thursday 09:15-10:30, roughly 1 h 15 min.** No submission. The habits you build here are used in
+every block that follows.
 
 Yesterday we said that FASTA has nowhere to put metadata, so people put it in the definition line,
 and that every downstream script therefore has to parse that line. This morning you write those
@@ -138,17 +138,24 @@ for frame in range(3):
 
 ### 7. Similarity, and what it does not tell you
 
-Build a small reference database from a handful of named sequences and search your set against it.
+You have been given a BLAST hits table in `data/hits.tsv`. Read that file first.
+
+For reference, this is how the supplied file was produced. You do not need to run these commands.
 
 ```bash
 makeblastdb -in data/toy-reference.fas -dbtype nucl
 blastn -query out/Danaus.COI-5P.fas -db data/toy-reference.fas \
        -outfmt "6 qseqid sseqid pident length evalue bitscore" \
-       -max_target_seqs 1 > out/hits.tsv
-head out/hits.tsv
+       -max_target_seqs 1 > data/hits.tsv
 ```
 
-Sort the hits by percentage identity and look at both ends of the range.
+Now inspect the supplied file:
+
+```bash
+head data/hits.tsv
+sort -k3,3nr data/hits.tsv | head
+sort -k3,3n data/hits.tsv | head
+```
 
 > A query matches its best hit at 87% identity. What can you conclude about its identity? Now the
 > harder question: the reference database contains fifty species and the world contains rather more.
@@ -157,30 +164,10 @@ Sort the hits by percentage identity and look at both ends of the range.
 That question is the whole of reference-database-dependent identification, and you will meet it again
 in week 3 with SILVA and in week 4 with BOLD. Today it is enough to have felt it.
 
-### 8. Convert, so that others can read it
-
-```python
-import sys
-from Bio import SeqIO, AlignIO
-from Bio.Align import MultipleSeqAlignment
-
-records = {}
-for seq in SeqIO.parse(sys.argv[1], "fasta"):
-    seq.seq = seq.seq.upper()
-    records[seq.description.split('|')[0]] = seq
-
-aln = MultipleSeqAlignment([records[k] for k in sorted(records)])
-AlignIO.write(aln, sys.argv[2], sys.argv[3])
-```
-
-Sorting the records and normalising the case makes two files comparable with `diff`. Without it, two
-alignments of the same data differ in bytes while being identical in content, and you cannot tell
-which kind of difference you are looking at.
-
 What to keep
 ------------
 
 Leave `scripts/` and `out/` where they are. You will retrieve records into the same tree this
 morning, annotate them this afternoon, and package the lot at the end of the day.
 
-Next: [TP2.2 Retrieval](../tp2) and the **Q2** submission.
+Next: [TP2.2 Retrieval](../tp2), then the protected **Q2** writing period.

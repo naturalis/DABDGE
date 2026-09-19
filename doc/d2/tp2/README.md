@@ -1,7 +1,8 @@
-TP2.2 Retrieval, and the metadata audit
-=======================================
+TP2.2 Retrieval and the metadata audit
+======================================
 
-**Thursday 10:45-13:00, roughly 2 h. Submit Q2 by end of day.**
+**Thursday 10:45-12:35, roughly 1 h 50 min.** The **12:35-13:00** slot is protected writing time
+for Q2, not an extension of this practical. Submit Q2 by end of day.
 
 Yesterday you were shown records. Today you go and get them, from three resources that were built by
 different communities for different purposes, and you find out how much of what you need is actually
@@ -49,21 +50,11 @@ p <- fromJSON("https://rest.uniprot.org/uniprotkb/P00395.json")
 p$primaryAccession
 p$entryType                       # reviewed or unreviewed
 p$proteinDescription$recommendedName$fullName$value
-length(p$references)
 ```
 
 > UniProtKB has two halves: Swiss-Prot, curated by hand, and TrEMBL, annotated automatically. The
 > accession does not tell you which you have. `entryType` does. Why does that distinction matter
 > more than the accession itself?
-
-Look at the evidence attached to one annotation:
-
-```r
-p$comments[[1]]
-```
-
-> Find one statement in this entry that is supported by an experiment, and one that is inferred. How
-> is the difference recorded?
 
 ### 3. An occurrence record
 
@@ -104,6 +95,8 @@ behind it: those have more metadata to be missing.
 Work through this checklist and write the answers down as you go. You are not looking for a verdict,
 you are looking for specifics.
 
+This audit is the substance of Q2. Keep it complete.
+
 | Question | Where you looked | What you found |
 | -------- | ---------------- | -------------- |
 | What identifies this record, and is the identifier versioned? | | |
@@ -138,6 +131,8 @@ Q2: metadata-quality mini-report
 --------------------------------
 
 **Due end of day today.** Half a page plus a brief annotated record, as R Markdown or Quarto.
+The **12:35-13:00** slot immediately after this practical is protected writing time for Q2 and is
+not extra practical time.
 
 1. Retrieve one biological record from a named public database. Report its identifiers, its
    provenance, and the fields that are missing.
@@ -150,4 +145,4 @@ annotation. Feedback comes back tomorrow morning.
 
 > Keep it to 30-45 minutes. This is a diagnostic, not an essay.
 
-Next: [TP2.3 Annotation](../tp3).
+Next: [TP2.3 Annotation](../tp3), after the protected Q2 writing period.

@@ -10,42 +10,48 @@ actually in them, annotate a table yourself, establish that a specimen described
 is the same specimen, and then leave behind a folder that somebody else could use.
 
 It is a long day, so it is broken into five blocks with breaks between them. Everything you make
-goes into one working directory, `~/dabdge-w2`, because the last hour packages it.
+goes into one working directory, `~/dabdge-w2`, because the last forty minutes package it.
 
 Practicals
 ----------
 
-| | Practical | When | Submission |
-| --- | --------- | ---- | ---------- |
-| TP2.1 | [Sequence handling with Biopython](tp1/README.md) | 09:00-10:30 | none |
-| TP2.2 | [Retrieval, and the metadata audit](tp2/README.md) | 10:45-13:00 | **Q2, end of day** |
-| TP2.3 | [Annotation with standard vocabularies](tp3/README.md) | 14:00-15:30 | none |
-| TP2.4 | [Cross-database integration](tp4/README.md) | 15:45-17:45 | **Q3 drafted** |
-| TP2.5 | [Packaging](tp5/README.md) | 17:45-18:45 | folder zip, `{{SUBMISSION_CHANNEL}}` |
+| | Block | Time | Minutes |
+| --- | --- | --- | --- |
+| | Setup and orientation | 09:00-09:15 | 15 |
+| TP2.1 | [Sequence handling with Biopython](tp1/README.md) | 09:15-10:30 | 75 |
+| | Break | 10:30-10:45 | |
+| TP2.2 | [Retrieval and the metadata audit](tp2/README.md) | 10:45-12:35 | 110 |
+| | Q2 written in class | 12:35-13:00 | 25 |
+| | Lunch | 13:00-14:00 | |
+| TP2.3 | [Annotation with standard vocabularies](tp3/README.md) | 14:00-15:15 | 75 |
+| | Break | 15:15-15:30 | |
+| TP2.4 | [Cross-database integration](tp4/README.md) | 15:30-17:10 | 100 |
+| | Break | 17:10-17:20 | |
+| TP2.5 | [Packaging](tp5/README.md) | 17:20-18:00 | 40 |
 
 ### [TP2.1 Sequence handling with Biopython](tp1/README.md)
 
-FASTA in and out, basic statistics, translation and marker filtering, then BLAST-style similarity
-intuition against a toy reference database. This is the one Python block of the week; from TP2.2
-onwards the work is in R.
+FASTA in and out, basic statistics, translation and marker filtering, then similarity reading from
+a supplied hits table. This is the one Python block of the week; from TP2.2 onwards the work is in
+R.
 
-### [TP2.2 Retrieval, and the metadata audit](tp2/README.md)
+### [TP2.2 Retrieval and the metadata audit](tp2/README.md)
 
 Pull a nucleotide record from NCBI and ENA at once and compare what each gives you, then an
-occurrence record and a barcode record, and audit the metadata against what an analysis would
-actually need. **Submit Q2 by end of day.**
+occurrence record, and audit the metadata against what an analysis would actually need. The
+**12:35-13:00** slot is protected writing time for **Q2**, not an extension of the practical.
 
 ### [TP2.3 Annotation with standard vocabularies](tp3/README.md)
 
 Map a real sample table onto Darwin Core and find out that the difficulty is not filling fields in
 but deciding what the fields mean, then read a GO term as a defined class and walk its subgraph.
-*AI exercise: critique LLM-generated metadata fields.*
+Finish with a short GO identifier check against QuickGO.
 
 ### [TP2.4 Cross-database integration](tp4/README.md)
 
-One specimen or sample, described in several resources at once. Establish that they are the same
-thing, then write down every way in which the resources disagree. The disagreements are the result.
-**Q3 is drafted here**, finalised over the weekend. *AI exercise: LLM cross-source disambiguation.*
+One specimen, described in several resources at once. Establish that they are the same thing, then
+write down every way in which the resources disagree. The disagreements are the result. **Q3 is
+drafted here**, finalised over the weekend.
 
 ### [TP2.5 Packaging](tp5/README.md)
 
