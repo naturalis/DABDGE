@@ -1,0 +1,16 @@
+{
+  "source": "GlobalNames verifier",
+  "url": "https://verifier.globalnames.org/api/v1/verifications/Danaus%20plexippus",
+  "retrieval_date": "2026-09-19",
+  "license": "CC0-1.0",
+  "response": {
+    "names": {
+      "suppliedNameString": "Danaus plexippus",
+      "bestResult": {
+        "canonicalName": "Danaus plexippus",
+        "matchType": "Exact",
+        "dataSourceTitleShort": "GBIF Backbone Taxonomy"
+      }
+    }
+  }
+}

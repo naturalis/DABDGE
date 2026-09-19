@@ -68,7 +68,7 @@ UniProt entry.
 ```r
 occ <- fromJSON(paste0(
   "https://api.gbif.org/v1/occurrence/search",
-  "?scientificName=Cladosporium%20cladosporioides&limit=20"))
+  "?scientificName=Danaus%20plexippus&limit=20"))
 
 occ$results |>
   select(any_of(c("key", "scientificName", "eventDate",

@@ -1,0 +1,13 @@
+{
+  "source": "GBIF species match",
+  "url": "https://api.gbif.org/v1/species/match?name=Danaus%20plexippus",
+  "retrieval_date": "2026-09-19",
+  "license": "CC0-1.0",
+  "response": {
+    "usageKey": 1890498,
+    "scientificName": "Danaus plexippus (Linnaeus, 1758)",
+    "status": "ACCEPTED",
+    "matchType": "EXACT",
+    "confidence": 99
+  }
+}

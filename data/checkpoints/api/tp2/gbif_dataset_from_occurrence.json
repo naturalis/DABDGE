@@ -1,0 +1,12 @@
+{
+  "source": "GBIF dataset lookup",
+  "url": "https://api.gbif.org/v1/dataset/50c9509d-7cce-4d0f-9f4f-4fcbfc9a4542",
+  "retrieval_date": "2026-09-19",
+  "license": "CC0-1.0",
+  "response": {
+    "key": "50c9509d-7cce-4d0f-9f4f-4fcbfc9a4542",
+    "title": "Danaus plexippus teaching occurrence subset",
+    "license": "http://creativecommons.org/publicdomain/zero/1.0/legalcode",
+    "publishingOrganizationKey": "35f07c51-4e36-4b52-8e55-a95635f5d25b"
+  }
+}

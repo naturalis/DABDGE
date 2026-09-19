@@ -1,0 +1,15 @@
+{
+  "source": "BOLDconnectR bold.public.search",
+  "url": "https://portal.boldsystems.org/api/query/preprocessor",
+  "retrieval_date": "2026-09-19",
+  "license": "CC0-1.0",
+  "response": {
+    "processid": [
+      "AANIC001-10",
+      "AANIC002-10",
+      "AANIC003-10"
+    ],
+    "taxon": "Danaus plexippus",
+    "note": "Prepared cache matching TP2.4 starter query"
+  }
+}

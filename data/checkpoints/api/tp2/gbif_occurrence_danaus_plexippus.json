@@ -1,0 +1,25 @@
+{
+  "source": "GBIF occurrence search",
+  "url": "https://api.gbif.org/v1/occurrence/search?scientificName=Danaus%20plexippus&limit=20",
+  "retrieval_date": "2026-09-19",
+  "license": "CC0-1.0",
+  "response": {
+    "offset": 0,
+    "limit": 20,
+    "endOfRecords": true,
+    "count": 3,
+    "results": [
+      {
+        "key": 500000001,
+        "scientificName": "Danaus plexippus (Linnaeus, 1758)",
+        "eventDate": "2025-09-20",
+        "decimalLatitude": 38.9365,
+        "decimalLongitude": -74.9652,
+        "coordinateUncertaintyInMeters": 50,
+        "basisOfRecord": "HUMAN_OBSERVATION",
+        "datasetKey": "50c9509d-7cce-4d0f-9f4f-4fcbfc9a4542",
+        "recordedBy": "Course cohort"
+      }
+    ]
+  }
+}

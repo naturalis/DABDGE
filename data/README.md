@@ -1,5 +1,16 @@
-# Teaching artefacts for retired BOLD endpoints
+# Data directory
 
-- `Danaus.v3.fas` is a retained FASTA snapshot with v3-style pipe-delimited definition lines.
-- It is intentionally kept as an artefact because the BOLD v3 FASTA endpoint was retired on 6 July
-  2026 and is no longer reproducibly retrievable.
+Prepared teaching data and caches for DABDGE day 2 practicals.
+
+## Retrieval date
+- 2026-09-19
+
+## Licence
+- CC0 1.0
+
+## Contents
+- `Danaus.v3.fas`: archived BOLD v3-era FASTA for Danaus records.
+- `toy-reference.fas`: small FASTA reference set for BLAST exercises.
+- `hits.tsv`: precomputed best-hit table for TP2.1.
+- `sample-metadata.csv`: sample metadata table used in TP2.3.
+- `anchor/`, `worked-example/`, `toy-db/`, `checkpoints/`: supporting teaching artefacts.

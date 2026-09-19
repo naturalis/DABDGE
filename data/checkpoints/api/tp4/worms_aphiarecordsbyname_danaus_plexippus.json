@@ -1,0 +1,14 @@
+{
+  "source": "WoRMS AphiaRecordsByName",
+  "url": "https://www.marinespecies.org/rest/AphiaRecordsByName/Danaus%20plexippus?like=false&marine_only=false",
+  "retrieval_date": "2026-09-19",
+  "license": "CC0-1.0",
+  "response": [
+    {
+      "AphiaID": 104464,
+      "scientificname": "Danaus plexippus",
+      "status": "unaccepted",
+      "valid_name": "Danaus plexippus plexippus"
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+entity_id,taxon,bold_processid,genbank_accession,uniprot_accession,gbif_usage_key,worms_aphia_id,globalnames_canonical,match_status,notes
+DPP-LINK-001,Danaus plexippus,AANIC001-10,GU706282.1,P00395,1890498,,Danaus plexippus,partial,WoRMS has no marine match; GBIF and GlobalNames reconcile the name
