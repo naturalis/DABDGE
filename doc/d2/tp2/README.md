@@ -95,8 +95,8 @@ ds$publishingOrganizationKey
 
 ### 4. Choose your record
 
-Pick **one** record to audit properly. Use the anchor site if one has been assigned; otherwise pick
-any record from the three resources above that interests you. Prefer one with a physical specimen
+Pick **one** record to audit properly. Pick any record from the three resources above that
+interests you. Prefer one with a physical specimen
 behind it: those have more metadata to be missing.
 
 ### 5. Audit it

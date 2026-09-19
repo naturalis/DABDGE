@@ -10,7 +10,7 @@ The disagreements are the result. Nobody is being careless.
 
 ### 1. Pick your starting point
 
-Choose one of these, and use the anchor site if one has been assigned to you.
+Choose one of these.
 
 - a **specimen** with a barcode record: start from BOLD, follow the sequence to GenBank, the taxon to
   GBIF and WoRMS
