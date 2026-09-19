@@ -29,16 +29,16 @@ If that fails, create and activate the conda environment described in
 
 ### 1. Get some sequences
 
-We will use barcode sequences for a genus with plenty of records, so that the exercises have
-something to bite on. Use *Danaus*.
+We will use a BOLD v3-era FASTA snapshot for a genus with plenty of records, so that the exercises
+have something to bite on. Use *Danaus*.
 
 ```bash
-curl -o data/Danaus.fas "https://www.boldsystems.org/index.php/API_Public/sequence?taxon=Danaus"
+cp /path/to/your/DABDGE/data/Danaus.v3.fas data/Danaus.fas
 ```
 
-> The BOLD API changed between versions 4 and 5. If the call above returns nothing useful, use the
-> copy in `data/` in this repository and note the failure: an API that moves is a reproducibility
-> problem, and you have just met one.
+> BOLD v3 was retired in July 2026 and no longer serves this FASTA endpoint. The file in this
+> repository is an archived teaching artefact: keep the retrieval note with it, because an API that
+> moves is a reproducibility problem and you have just met one.
 
 Look at what you have before you write any code:
 

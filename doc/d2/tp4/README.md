@@ -24,17 +24,22 @@ Write down your starting identifier before you do anything else. Everything hang
 ### 2. Follow the links that exist
 
 ```r
-library(jsonlite); library(dplyr)
+library(BOLDconnectR); library(dplyr)
 
-# BOLD, if your starting point is a specimen
-bold <- fromJSON(paste0(
-  "https://www.boldsystems.org/index.php/API_Public/combined",
-  "?taxon=Danaus%20plexippus&format=json"))
+# BOLD v5 (public ids, no key needed)
+bold_ids <- bold.public.search(taxonomy = list("Danaus plexippus"))
+head(bold_ids)
+
+# BCDM records for those ids (requires a BOLD API key configured via bold.apikey())
+bold <- bold.fetch(
+  get_by = "processid",
+  identifiers = head(bold_ids$processid, 200)
+)
 ```
 
-> If the BOLD call fails, the API version has moved. Use the cached copy in `data/` and record the
-> failure. An identifier that resolves and an API that answers are two different promises, and only
-> one of them was made to you.
+> BOLD v5 is a tokenised API under `portal.boldsystems.org`; `bold.public.search()` wraps the first
+> query stages and `bold.fetch()` wraps retrieval. If `bold.fetch()` fails because your account has no
+> key, keep `bold_ids` and continue with another starting point from this list.
 
 Follow the outbound links. A BOLD record often carries a GenBank accession; a GenBank record often
 carries a specimen voucher; a GBIF occurrence carries a dataset key and sometimes an
