@@ -2,6 +2,9 @@ import sys
 from Bio import SeqIO
 from Bio.SeqUtils import gc_fraction
 
+if len(sys.argv) != 2:
+    raise SystemExit(f"Usage: {sys.argv[0]} <input.fasta>")
+
 lengths = []
 for record in SeqIO.parse(sys.argv[1], "fasta"):
     lengths.append(len(record.seq))

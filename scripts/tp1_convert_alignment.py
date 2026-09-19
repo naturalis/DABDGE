@@ -2,6 +2,9 @@ import sys
 from Bio import SeqIO, AlignIO
 from Bio.Align import MultipleSeqAlignment
 
+if len(sys.argv) != 4:
+    raise SystemExit(f"Usage: {sys.argv[0]} <input.fasta> <output> <format>")
+
 records = {}
 length = None
 for seq in SeqIO.parse(sys.argv[1], "fasta"):
