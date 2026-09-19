@@ -6,13 +6,13 @@ Where we are
 
 ![](lecture1/lifecycle-arc.png)
 
-DABDGE runs along a lifecycle arc, and this is the second stop:
+DABDGE follows a story arc, and we are now at the second stop:
 
-- **Week 1** - generation and deposit. Where do biological data come from, and where do they go?
-- **Week 2** - architecture and FAIR. **How is a biological record structured, made interoperable,
+- **Week 1** - Data generation and deposit. Where do biological data come from, and where do they go?
+- **Week 2** - Data architecture and FAIR. **How is a biological record structured, made interoperable,
   and used?**
-- **Week 3** - analysis and inference. How do we extract biological meaning from these data?
-- **Week 4** - application and integration. How does this come together in a real biodiversity
+- **Week 3** - Data analysis and inference. How do we extract biological meaning from data?
+- **Week 4** - Data application and integration. How does it all come together in a real biodiversity
   question?
 
 Last week you saw how sequences, occurrences and measurements are produced, and you learned to read
@@ -23,8 +23,8 @@ Next week you will compute on them.
 > the master's and answer four questions about it: what identifies it, what it asserts, who asserted
 > it, and what it can be joined to.
 
-A puzzle to open with
----------------------
+A case to open with
+-------------------
 
 A 2012 study of benthic microbial eukaryote communities in the Gulf of Mexico deposited its data in
 three places at once:
@@ -33,12 +33,12 @@ three places at once:
 - **MG-RAST**, under a submission ID
 - **NCBI SRA**, under an accession number
 
-Three identifier schemes, three granularities, three curation regimes, one study.
+So there are three depositions, each with its own identifier type, at different granularities, under different curation regimes, for a single study.
 
 > Why three? What does each deposit make possible that the others do not? And which of the three
 > would you go to if you wanted to re-run the analysis?
 
-Hold that question. We will answer it this afternoon, after we have the vocabulary.
+We will go into this in the afternoon, after we have the vocabulary.
 
 (**HM Bik, KM Halanych, J Sharma & WK Thomas**, 2012. Dramatic shifts in benthic microbial eukaryote
 communities following the Deepwater Horizon oil spill. _PLoS ONE_ **7**(6): e38550.
@@ -72,7 +72,7 @@ from not knowing what a row is.
 - A **column** is one variable measured on every thing
 - One column is (or should be) the **key**: the identifier that other tables can point at
 
-This is the "tidy data" convention, and it is worth being pedantic about it, because every join you
+This is the "tidy data" convention. It is worth being pedantic about it, because every join you
 perform for the rest of this master's depends on the key columns meaning what you think they mean.
 
 ```
@@ -104,7 +104,7 @@ simply get answers about the wrong samples.
 The join is the analysis
 ------------------------
 
-Consider a phylogenetically informed beta diversity measure such as UniFrac. To compute it you need
+Consider a phylogenetically informed beta diversity measure such as UniFrac. To compute it, you need
 three objects:
 
 1. A **feature table**: abundances of each OTU or ASV in each sample
