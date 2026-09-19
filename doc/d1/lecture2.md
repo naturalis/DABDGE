@@ -314,8 +314,8 @@ Data and analyses both change. The question is whether the change is recorded.
 - A workflow, a container or an environment file records what the code was run with
 
 Reproducibility is a competence, not a virtue, and it is practised rather than intended. Tomorrow
-afternoon you will commit your own work to this repository, which is the smallest possible version of
-all three.
+afternoon you will package your own work so that its files, provenance and environment are clear to
+someone else, which is the smallest possible version of all three.
 
 Multi-source integration
 ------------------------

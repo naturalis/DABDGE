@@ -1,8 +1,9 @@
 Day 2: Retrieval, annotation and integration
 ============================================
 
-**Thursday 24 September 2026, 8 h of practicals.** Two submissions come out of today: **Q2 by end of
-day**, and **Q3 drafted in class and submitted by end of day Friday**.
+**Thursday 24 September 2026, 8 h of practicals.** Three submissions come out of today:
+**Q2 by end of day**, **the TP2.5 folder zip by end of day**, and **Q3 drafted in class and
+submitted by end of day Friday**.
 
 Yesterday you were shown records. Today you go and get them, find out how much of what you need is
 actually in them, annotate a table yourself, establish that a specimen described in four resources
@@ -20,7 +21,7 @@ Practicals
 | TP2.2 | [Retrieval, and the metadata audit](tp2/README.md) | 10:45-13:00 | **Q2, end of day** |
 | TP2.3 | [Annotation with standard vocabularies](tp3/README.md) | 14:00-15:30 | none |
 | TP2.4 | [Cross-database integration](tp4/README.md) | 15:45-17:45 | **Q3 drafted** |
-| TP2.5 | [Packaging](tp5/README.md) | 17:45-18:45 | none |
+| TP2.5 | [Packaging](tp5/README.md) | 17:45-18:45 | folder zip, `{{SUBMISSION_CHANNEL}}` |
 
 ### [TP2.1 Sequence handling with Biopython](tp1/README.md)
 
@@ -49,8 +50,9 @@ thing, then write down every way in which the resources disagree. The disagreeme
 ### [TP2.5 Packaging](tp5/README.md)
 
 Turn the day's folder into a deposit that would pass the audit you performed this morning: a
-structure, a README, recorded provenance, and a commit. This is the container your Q3 goes in, and
-the habit that carries into the project and the dissertation.
+structure, a README, recorded provenance and a licence statement. Submit a zip through
+`{{SUBMISSION_CHANNEL}}`. This is the container your Q3 goes in, and the habit that carries into
+the project and the dissertation.
 
 Before you start
 ----------------
@@ -58,7 +60,6 @@ Before you start
 - R and RStudio, with `jsonlite`, `dplyr`, `readr` and `ggplot2` available
 - the conda environment from the repository root, which provides Python, Biopython, Jupyter and BLAST
   (`conda env create -f environment.yml` and `conda activate dabdge`)
-- a GitHub account, for the packaging block at the end of the day
 - the day 1 lecture notes to hand ([Lecture I](../d1/lecture1.md), [Lecture II](../d1/lecture2.md)),
   since the vocabulary is assumed rather than repeated
 

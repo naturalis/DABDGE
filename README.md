@@ -4,7 +4,7 @@ DABDGE - Data Analysis from Genes to Ecosystems
 ### Introduction
 
 This repository contains the teaching materials for the two-day block **Data architecture, FAIR,
-ontologies and retrieval**, taught by [Rutger Vos](https://github.com/rvosa)
+ontologies and retrieval**, taught by Rutger Vos
 ([Naturalis Biodiversity Center](https://naturalis.nl)) within the curricular unit *Analysis of
 Biological Data from the Gene to the Ecosystem* (DABDGE). DABDGE is the first CU of the MSc
 programme in [Molecular and Environmental Computational Biology](https://ecum.uminho.pt) (MBCMA)
@@ -41,8 +41,11 @@ following:
   (open source edition), already installed during week 1
 - [Python 3](https://www.python.org/) with [Biopython](https://biopython.org/) and
   [Jupyter](https://jupyter.org/), provided in the conda environment for this repository
-- a [GitHub](https://github.com/) account, for the packaging exercise on day 2
 - a plain text editor you are comfortable with
+
+Get the course materials by opening this repository on GitHub, clicking the green **Code** button,
+and downloading the ZIP. Unpack it somewhere you can find again, for example in your home folder,
+and work from that unpacked folder.
 
 Install a conda distribution first (for example
 [Miniforge](https://conda-forge.org/download/) or
@@ -93,7 +96,8 @@ Protect a 10-15 minute break in the middle of each block.
     or more resources, reconcile the names, list the discrepancies. **Q3 drafted in class.**
     *AI exercise: LLM cross-source disambiguation.*
   - [TP2.5 FAIR packaging wrap](doc/d2/tp5) (~1 h) - package the day's work as a deposit that would
-    pass the audit you performed this morning, and commit it to this repository.
+    pass the audit you performed this morning, then submit a zip through
+    `{{SUBMISSION_CHANNEL}}`.
 
 Plan for two clear breaks, mid-morning and mid-afternoon. Thursday is a long day.
 
@@ -173,11 +177,10 @@ This block orients and exposes; the named CU goes deep.
 ### Provenance and reuse
 
 Parts of these materials are adapted from
-[naturalis/mebioda](https://github.com/naturalis/mebioda), the repository for the MSc course
+`naturalis/mebioda`, the repository for the MSc course
 *Methods in Biodiversity Analysis* taught at Leiden University, in particular the material on
 sequence data formats, database APIs, phylogenetic data representation, semantics and version
 control. Adaptations, cuts and additions are documented per file.
 
 Content is released under the [MIT licence](LICENSE) unless a dataset directory states otherwise.
-Contributions, corrections and issues are welcome, including from students: the pull request is part
-of the curriculum.
+Corrections are welcome by email or through `{{SUBMISSION_CHANNEL}}`.
