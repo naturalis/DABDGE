@@ -9,7 +9,7 @@ records = {}
 length = None
 for seq in SeqIO.parse(sys.argv[1], "fasta"):
     seq.seq = seq.seq.upper()
-    key = seq.description.split('|')[0]
+    key = seq.id
     if key in records:
         raise ValueError(f"Duplicate record identifier: {key}")
     if length is None:
