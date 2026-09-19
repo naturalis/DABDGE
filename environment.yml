@@ -1,0 +1,15 @@
+name: dabdge
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - python=3.11
+  - biopython
+  - blast
+  - jupyterlab
+  - r-base
+  - r-jsonlite
+  - r-dplyr
+  - r-readr
+  - r-ggplot2

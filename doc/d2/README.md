@@ -56,7 +56,8 @@ Before you start
 ----------------
 
 - R and RStudio, with `jsonlite`, `dplyr`, `readr` and `ggplot2` available
-- Python 3 with Biopython, or the provided container
+- the conda environment from the repository root, which provides Python, Biopython, Jupyter and BLAST
+  (`conda env create -f environment.yml` and `conda activate dabdge`)
 - a GitHub account, for the packaging block at the end of the day
 - the day 1 lecture notes to hand ([Lecture I](../d1/lecture1.md), [Lecture II](../d1/lecture2.md)),
   since the vocabulary is assumed rather than repeated
