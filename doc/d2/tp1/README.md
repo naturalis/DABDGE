@@ -24,7 +24,7 @@ Check that Biopython is available:
 python3 -c "import Bio; print(Bio.__version__)"
 ```
 
-If that fails, either `pip install biopython` or start the container described in
+If that fails, create and activate the conda environment described in
 [the repository README](../../../README.md).
 
 ### 1. Get some sequences

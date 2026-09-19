@@ -40,11 +40,16 @@ following:
 - [R](https://cran.r-project.org/) and [RStudio](https://posit.co/products/open-source/rstudio/)
   (open source edition), already installed during week 1
 - [Python 3](https://www.python.org/) with [Biopython](https://biopython.org/) and
-  [Jupyter](https://jupyter.org/), or access to the provided container
+  [Jupyter](https://jupyter.org/), provided in the conda environment for this repository
 - a [GitHub](https://github.com/) account, for the packaging exercise on day 2
 - a plain text editor you are comfortable with
-- optionally, [Docker](https://www.docker.com/products/docker-desktop/), if you prefer to run the
-  practicals in the provided environment rather than installing packages yourself
+
+From the repository root, create and activate the teaching environment with:
+
+```bash
+conda env create -f environment.yml
+conda activate dabdge
+```
 
 No accounts are needed for the public databases used here. All retrieval is done over public APIs.
 
