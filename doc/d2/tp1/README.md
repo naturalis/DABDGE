@@ -8,6 +8,9 @@ Yesterday we said that FASTA has nowhere to put metadata, so people put it in th
 and that every downstream script therefore has to parse that line. This morning you write those
 scripts.
 
+> **If you are behind:** From step 5 onwards, start from
+> `data/checkpoints/Danaus.COI-5P.fas`. Using this checkpoint is expected.
+
 Set up your working directory
 -----------------------------
 
@@ -27,7 +30,7 @@ python3 -c "import Bio; print(Bio.__version__)"
 If that fails, create and activate the conda environment described in
 [the repository README](../../../README.md).
 
-### 1. Get some sequences
+### 1. Core: Get some sequences
 
 We will use a BOLD v3-era FASTA snapshot for a genus with plenty of records, so that the exercises
 have something to bite on. Use *Danaus*.
@@ -46,8 +49,10 @@ Look at what you have before you write any code:
 head -2 data/Danaus.fas
 grep -c '>' data/Danaus.fas
 ```
+<!-- TODO: RV to verify --> you should see roughly 10^3 records, most of them with BOLD-style
+definition lines.
 
-### 2. Read the definition line with shell tools
+### 2. Core: Read the definition line with shell tools
 
 The definition line is structured as `>ID|Scientific binomial|marker|accession`. That structure is a
 convention, not a standard, but it is enough for a first pass:
@@ -55,20 +60,23 @@ convention, not a standard, but it is enough for a first pass:
 ```bash
 grep '>' data/Danaus.fas | cut -f 3 -d '|' | sort | uniq -c | sort -rn
 ```
+<!-- TODO: RV to verify --> you should see roughly 10^0 to 10^1 marker groups, most of them from
+one dominant marker.
 
 > How many markers are in the file? Did you expect more than one? What would have told you in
 > advance?
 
-### 3. Hit the wall
+### 3. Core: Hit the wall
 
 Now try to pull out only the COI-5P sequences with the same tools.
 
 > Write the command. Then explain why it does not work.
 
-The answer is that a FASTA record spans an unpredictable number of lines, so a line-oriented tool
-cannot keep the definition line and its sequence together. This is the moment to reach for a parser.
+**Intentional failure.** This command cannot work with a line-oriented tool. The failure is the
+answer. It looks like headers without their full sequences, or sequences detached from the marker
+you filtered on. A FASTA record spans an unpredictable number of lines, so you must use a parser.
 
-### 4. Filter with Biopython
+### 4. Core: Filter with Biopython
 
 Create `scripts/filter_marker.py`:
 
@@ -91,11 +99,12 @@ Run it:
 python3 scripts/filter_marker.py data/Danaus.fas COI-5P > out/Danaus.COI-5P.fas
 grep -c '>' out/Danaus.COI-5P.fas
 ```
+<!-- TODO: RV to verify --> you should see roughly 10^3 records, most of them COI-5P sequences.
 
 > Older versions of this script opened files with `open(path, "rU")`. That mode was removed in
 > Python 3.11. Code rots; this is the mild version of the problem you will see again in TP2.5.
 
-### 5. Describe what you have
+### 5. Core: Describe what you have
 
 Create `scripts/summarise.py`:
 
@@ -117,11 +126,13 @@ print(f"\n# {len(lengths)} records, "
 ```bash
 python3 scripts/summarise.py out/Danaus.COI-5P.fas > out/Danaus.COI-5P.tsv
 ```
+<!-- TODO: RV to verify --> you should see roughly 10^3 records, most of them near one expected
+COI-5P length.
 
 > COI-5P is a protein-coding fragment of a fixed expected length. How many of your records have it?
 > What are the short ones, and should they be in the file at all?
 
-### 6. Translate, and find out what the reading frame is
+### 6. Stretch: Translate, and find out what the reading frame is
 
 ```python
 from Bio import SeqIO
@@ -136,7 +147,10 @@ for frame in range(3):
 > happens, and why? An annotation that does not travel with the sequence has to be supplied by you,
 > correctly, every time.
 
-### 7. Similarity, and what it does not tell you
+**Intentional failure.** Changing to `table=1` is expected to fail biologically for this case. The
+failure is the answer. It looks like many extra stop codons in otherwise plausible coding sequence.
+
+### 7. Stretch: Similarity, and what it does not tell you
 
 You have been given a BLAST hits table in `data/hits.tsv`. Read that file first.
 

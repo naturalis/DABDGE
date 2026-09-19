@@ -9,12 +9,17 @@ This morning you audited somebody's deposit and found it wanting. It would be po
 day with a folder that would fail the same audit. So spend the last forty minutes making one that
 passes.
 
-### 1. Look at what you have
+> **If you are behind:** Compare your folder against
+> `data/checkpoints/dabdge-w2-example/`. Using this checkpoint is expected.
+
+### 1. Core: Look at what you have
 
 ```bash
 cd ~/dabdge-w2
 find . -type f | sort
 ```
+<!-- TODO: RV to verify --> you should see roughly 10^1 records, most of them files spread across
+`data/`, `scripts/` and `out/`.
 
 Most likely: a few scripts, several downloaded files, some intermediate output, and at least one
 thing called `final2.csv`.
@@ -22,7 +27,7 @@ thing called `final2.csv`.
 > Hand that folder to the person sitting next to you. Can they tell which file is input, which is
 > output, and which was a mistake? That is the audit, and it takes ten seconds.
 
-### 2. Give it a shape
+### 2. Core: Give it a shape
 
 One layout, used consistently, beats a clever one. Use this structure for the folder you hand in:
 
@@ -47,7 +52,7 @@ Two rules that do most of the work:
   input you have edited in place has lost its provenance and cannot be re-downloaded to check.
 - **`out/` is disposable.** If deleting it loses something, that something belongs elsewhere.
 
-### 3. Write the README you wanted this morning
+### 3. Core: Write the README you wanted this morning
 
 Not a description of the project. A description of the files.
 
@@ -78,8 +83,10 @@ prefixed `x_` and defined in `data/README.md`.
 
 > The retrieval date is the field people forget and the one that matters most, because the resource
 > has moved on since. Write it down for every file.
+<!-- TODO: RV to verify --> you should see roughly 10^0 records, most of them one README with data,
+scripts and outputs documented.
 
-### 4. Say what the licence is
+### 4. Core: Say what the licence is
 
 An unlicensed deposit is legally unusable however open it looks. For teaching material and derived
 tables, CC0 or CC-BY is normal; for code, MIT or Apache-2.0. Copy the licence text from the
@@ -87,13 +94,17 @@ tables, CC0 or CC-BY is normal; for code, MIT or Apache-2.0. Copy the licence te
 
 > Your outputs are derived from sources with their own terms. Does your licence conflict with any of
 > them? This is not a rhetorical question and the answer is occasionally yes.
+<!-- TODO: RV to verify --> you should see roughly 10^0 records, most of them one licence file that
+matches the terms you state.
 
-### 5. Submit the folder
+### 5. Core: Submit the folder
 
 Zip `dabdge-w2/` when you are done. Submit the zip file through `{{SUBMISSION_CHANNEL}}`, with your
 name on it if that system does not add your name for you.
+<!-- TODO: RV to verify --> you should see roughly 10^0 records, most of them one zip file that
+recreates the agreed folder structure when extracted.
 
-### 6. Audit your neighbour
+### 6. Stretch: Audit your neighbour
 
 Swap folders with the person next to you, by USB stick, AirDrop, shared drive or whatever the room
 allows, and score theirs the way you scored the Dryad
@@ -110,7 +121,7 @@ deposit this morning.
 > other dataset you will ever audit. Ask them the questions you could not ask the authors this
 > morning.
 
-### 7. One thing to take with you
+### 7. Stretch: One thing to take with you
 
 The deposit you audited this morning was made by competent people meeting the standards of their
 time. Yours will be audited by somebody in 2038 under standards that do not exist yet.
