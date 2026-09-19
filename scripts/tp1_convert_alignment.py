@@ -15,5 +15,8 @@ for seq in SeqIO.parse(sys.argv[1], "fasta"):
         raise ValueError("All sequences must have the same length to write an alignment")
     records[key] = seq
 
+if not records:
+    raise SystemExit(f"No FASTA records found in {sys.argv[1]}")
+
 aln = MultipleSeqAlignment([records[k] for k in sorted(records)])
 AlignIO.write(aln, sys.argv[2], sys.argv[3])
