@@ -14,14 +14,10 @@ scripts.
 Set up your working directory
 -----------------------------
 
-Everything you make today goes in one place, because on Friday afternoon you will package it.
+Everything you do today happens in one place: inside the downloaded repository, with the environment
+activated. Consult the repository's root README.md for how to do that.
 
-```bash
-mkdir -p ~/dabdge-w2/{data,scripts,out}
-cd ~/dabdge-w2
-```
-
-Check that Biopython is available:
+When all is set up, check that Biopython is available:
 
 ```bash
 python3 -c "import Bio; print(Bio.__version__)"
