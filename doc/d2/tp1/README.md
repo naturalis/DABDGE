@@ -162,38 +162,10 @@ python3 scripts/tp1_translate_frames.py out/Danaus.COI-5P.fas
 **Intentional failure.** Changing to `table=1` is expected to fail biologically for this case. The
 failure is the answer. It looks like many extra stop codons in otherwise plausible coding sequence.
 
-### 7. Stretch: Similarity, and what it does not tell you
-
-You have been given a BLAST hits table in `data/hits.tsv`. Read that file first.
-
-For reference, this is how the supplied file was produced. You do not need to run these commands.
-
-```bash
-makeblastdb -in data/toy-reference.fas -dbtype nucl
-blastn -query out/Danaus.COI-5P.fas -db data/toy-reference.fas \
-       -outfmt "6 qseqid sseqid pident length evalue bitscore" \
-       -max_target_seqs 1 > data/hits.tsv
-```
-
-Now inspect the supplied file:
-
-```bash
-head data/hits.tsv
-sort -k3,3nr data/hits.tsv | head
-sort -k3,3n data/hits.tsv | head
-```
-
-> A query matches its best hit at 87% identity. What can you conclude about its identity? Now the
-> harder question: the reference database contains fifty species and the world contains rather more.
-> What does the best hit mean when the right answer is not in the database at all?
-
-That question is the whole of reference-database-dependent identification, and you will meet it again
-in week 3 with SILVA and in week 4 with BOLD. Today it is enough to have felt it.
-
 What to keep
 ------------
 
 Leave `scripts/` and `out/` where they are. You will retrieve records into the same tree this
 morning, annotate them this afternoon, and package the lot at the end of the day.
 
-Next: [TP2.2 Retrieval](../tp2), then the protected **Q2** writing period.
+Next: [TP2.2 Retrieval](../tp2)
