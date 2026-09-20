@@ -8,9 +8,6 @@ Yesterday we said that FASTA has nowhere to put metadata, so people put it in th
 and that every downstream script therefore has to parse that line. This morning you write those
 scripts.
 
-> **If you are behind:** From step 5 onwards, start from
-> `data/checkpoints/Danaus.COI-5P.fas`. Using this checkpoint is expected.
-
 Set up your working directory
 -----------------------------
 
