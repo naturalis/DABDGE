@@ -42,11 +42,9 @@ cp data/Danaus.v3.fas data/Danaus.fas
 Look at what you have before you write any code:
 
 ```bash
-head -2 data/Danaus.fas
 grep -c '>' data/Danaus.fas
 ```
-<!-- TODO: RV to verify --> you should see roughly 10^3 records, most of them with BOLD-style
-definition lines.
+You should see four records, with BOLD v3-style definition lines.
 
 ### 2. Core: Read the definition line with shell tools
 
