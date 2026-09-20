@@ -42,7 +42,7 @@ cp data/Danaus.v3.fas data/Danaus.fas
 Look at what you have before you write any code:
 
 ```bash
-grep -c '>' data/Danaus.fas
+grep '>' data/Danaus.fas
 ```
 You should see four records, with BOLD v3-style definition lines.
 
