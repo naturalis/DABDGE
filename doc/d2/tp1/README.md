@@ -71,7 +71,9 @@ you filtered on. A FASTA record spans an unpredictable number of lines, so you m
 
 ### 4. Core: Filter with Biopython
 
-Create `scripts/filter_marker.py`:
+Copy the code below, paste it into a text editor, and save it as `scripts/filter_marker.py`.
+(You will find that the script already exists as a fallback in the repository - we do this
+simply to get comfortable with saving plain text code and running it.)
 
 ```python
 import sys
