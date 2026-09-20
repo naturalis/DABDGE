@@ -130,11 +130,23 @@ Create `scripts/tp1_translate_frames.py`
 ```python
 import sys
 from Bio import SeqIO
+from Bio.Data.CodonTable import TranslationError
 
-record = next(SeqIO.parse(sys.argv[1], "fasta"))
-for frame in range(3):
-    protein = record.seq[frame:].translate(table=5)   # invertebrate mitochondrial
-    print(frame, protein.count("*"), protein[:40])
+print("id\tframe\tstops")
+for record in SeqIO.parse(sys.argv[1], "fasta"):
+    counts = []
+    for frame in range(3):
+        seq = record.seq[frame:]
+        stops = 0
+        for i in range(0, len(seq) - len(seq) % 3, 3):
+            try:
+                if seq[i:i + 3].translate(table=5) == "*":
+                    stops += 1
+            except TranslationError:
+                pass
+        counts.append((stops, frame))
+    stops, frame = min(counts)
+    print(f"{record.id}\t{frame}\t{stops}")
 ```
 
 And run it:
@@ -143,9 +155,9 @@ And run it:
 python3 scripts/tp1_translate_frames.py out/Danaus.COI-5P.fas
 ```
 
-> Which frame gives the fewest stop codons? Now change `table=5` to the default `table=1`. What
-> happens, and why? An annotation that does not travel with the sequence has to be supplied by you,
-> correctly, every time.
+> Notice how the optimal frame varies a bit from one record to the next but that the
+> optimum always has 0 stop codons. Now change `table=5` to the default `table=1`. What
+> happens, and why?
 
 **Intentional failure.** Changing to `table=1` is expected to fail biologically for this case. The
 failure is the answer. It looks like many extra stop codons in otherwise plausible coding sequence.
