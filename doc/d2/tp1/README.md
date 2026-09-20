@@ -94,10 +94,7 @@ Run it:
 python3 scripts/filter_marker.py data/Danaus.fas COI-5P > out/Danaus.COI-5P.fas
 grep -c '>' out/Danaus.COI-5P.fas
 ```
-<!-- TODO: RV to verify --> you should see roughly 10^3 records, most of them COI-5P sequences.
-
-> Older versions of this script opened files with `open(path, "rU")`. That mode was removed in
-> Python 3.11. Code rots; this is the mild version of the problem you will see again in TP2.5.
+You should see the number 2, i.e. the count of filtered records.
 
 ### 5. Core: Describe what you have
 
