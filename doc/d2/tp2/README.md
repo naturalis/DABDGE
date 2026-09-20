@@ -4,13 +4,12 @@ TP2.2 Retrieval and the metadata audit
 **Thursday 10:45-12:35, roughly 1 h 50 min.** The **12:35-13:00** slot is protected writing time
 for Q2, not an extension of this practical. Submit Q2 by end of day.
 
-Yesterday you were shown records. Today you go and get them, from three resources that were built by
-different communities for different purposes, and you find out how much of what you need is actually
-there.
+Yesterday you were shown records. Today we will go and get them, from three resources that 
+were built by different communities for different purposes. We will find out how much of 
+what you need is actually there.
 
-From here on we work in R, because that is the environment you will use for the rest of the master's
-and because your submission is an R Markdown or Quarto document. Python stays where it belongs, in
-sequence handling.
+From here on we work in R, because that is the environment you will use for most of the 
+master's. Python stays where it belongs, in sequence handling.
 
 > **If you are behind:** Start this block from the retrieved records in
 > `data/checkpoints/records/`. Using this checkpoint is expected.
@@ -38,11 +37,13 @@ ena <- readLines(paste0("https://www.ebi.ac.uk/ena/browser/api/embl/", acc))
 writeLines(head(gb, 25))
 writeLines(head(ena, 25))
 ```
-<!-- TODO: RV to verify --> you should see roughly 10^0 records, most of them the same sequence
-record rendered in two formats.
 
-> The sequence is the same. Is the metadata? List two fields that appear in one rendering and not
-> the other. Which rendering would you cite, and does it matter?
+You should see the first 25 lines of the same record, first from GenBank, and then from 
+ENA.
+
+> The sequence is the same. Is the metadata? If need be, look through more lines of the
+> record. List two fields that appear in one rendering and not the other. Which rendering 
+> would you cite, and does it matter?
 
 Record the **versioned** accession, not the bare one. `GU706282` is a moving target;
 `GU706282.1` is not.
@@ -56,8 +57,9 @@ p$primaryAccession
 p$entryType                       # reviewed or unreviewed
 p$proteinDescription$recommendedName$fullName$value
 ```
-<!-- TODO: RV to verify --> you should see roughly 10^0 records, most of them fields from one
-UniProt entry.
+
+You should see fields from an R `list` objects. In RStudio you can also explore the
+object in the 'environment' tab.
 
 > UniProtKB has two halves: Swiss-Prot, curated by hand, and TrEMBL, annotated automatically. The
 > accession does not tell you which you have. `entryType` does. Why does that distinction matter
@@ -78,6 +80,9 @@ occ$results |>
   as_tibble()
 ```
 
+You should see twenty records (in any case, there were at time of writing), some of which
+with a missing audit field.
+
 Now go up one level, to the dataset the record belongs to:
 
 ```r
@@ -86,8 +91,6 @@ ds$title
 ds$license
 ds$publishingOrganizationKey
 ```
-<!-- TODO: RV to verify --> you should see roughly 10^1 records, most of them with at least one
-missing audit field.
 
 > An occurrence has two kinds of provenance: who observed it, and who published it. Both matter, for
 > different reasons. Which of the two would you need in order to decide whether you may reuse the
@@ -115,11 +118,9 @@ This audit is the substance of Q2. Keep it complete.
 | What is missing that a reuser would need? | | |
 | What licence applies? | | |
 
-Two of the rows usually bite. `coordinateUncertaintyInMeters` is empty far more often than it is
-populated, and the licence is frequently stated at the dataset level and nowhere on the record
+Two of the rows usually are problematic. `coordinateUncertaintyInMeters` is often empty, 
+and the licence is frequently stated at the dataset level and nowhere on the record
 itself.
-<!-- TODO: RV to verify --> you should see roughly 10^0 records, most of them with clear identifiers
-and at least one missing re-use detail.
 
 ### 6. Stretch: A deposit, rather than a record
 
@@ -150,9 +151,6 @@ not extra practical time.
 2. Identify two metadata-quality issues and propose one fix for each. A fix is something somebody
    could actually do: a field to populate, a vocabulary to use, a link to add.
 3. Include your AI-use note: which tool, for what task, and one output you had to correct or reject.
-
-Scoring is correct / partial / incorrect per question, plus the record itself on clarity of
-annotation. Feedback comes back tomorrow morning.
 
 > Keep it to 30-45 minutes. This is a diagnostic, not an essay.
 
