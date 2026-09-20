@@ -133,7 +133,6 @@ dc <- fromJSON("https://api.datacite.org/dois/10.5061/dryad.4sd51d4b")
 dc$data$attributes$titles
 dc$data$attributes$rightsList          # is there a licence?
 dc$data$attributes$relatedIdentifiers  # does it point at the other deposits?
-dc$data$attributes$descriptions |> substr(1, 300)
 ```
 
 > A DOI that resolves makes a deposit findable. What would have to be in `relatedIdentifiers` for the
