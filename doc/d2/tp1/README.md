@@ -24,7 +24,7 @@ python3 -c "import Bio; print(Bio.__version__)"
 ```
 
 If that fails, create and activate the conda environment described in
-[the repository README](../../../README.md).
+[the repository README](../../../README.md#preparations).
 
 ### 1. Core: Get some sequences
 
