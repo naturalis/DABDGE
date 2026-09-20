@@ -25,8 +25,9 @@ If that fails, create and activate the conda environment described in
 
 ### 1. Core: Get some sequences
 
-We will use a BOLD v3-era FASTA snapshot for a genus with plenty of records, so that the exercises
-have something to bite on. Use *Danaus*.
+We will use a FASTA file as BOLD used to produce. The reason why we use this older 
+version is that it demonstrates how definition lines in FASTA files are sometimes
+overloaded with metadata in idiosyncratic ways.
 
 ```bash
 cp data/Danaus.v3.fas data/Danaus.fas
@@ -41,7 +42,7 @@ Look at what you have before you write any code:
 ```bash
 grep '>' data/Danaus.fas
 ```
-You should see four records, with BOLD v3-style definition lines.
+You should see a few hundred records, with BOLD v3-style definition lines.
 
 ### 2. Core: Read the definition line with shell tools
 
@@ -51,10 +52,10 @@ convention, not a standard, but it is enough for a first pass:
 ```bash
 grep '>' data/Danaus.fas | cut -f 3 -d '|' | sort | uniq -c | sort -rn
 ```
-You should see a couple of marker groups, one group being the dominant marker in BOLD
+You should see about twenty of marker groups, one group being the dominant marker in BOLD
 
-> How many markers are in the file? Did you expect more than one? What would have told you in
-> advance?
+> How many markers are in the file? Did you expect more than one? Could anything have
+> told you in advance?
 
 ### 3. Core: Hit the wall
 
@@ -91,7 +92,7 @@ Run it:
 python3 scripts/filter_marker.py data/Danaus.fas COI-5P > out/Danaus.COI-5P.fas
 grep -c '>' out/Danaus.COI-5P.fas
 ```
-You should see the number 2, i.e. the count of filtered records.
+You should see the number 379, i.e. the count of filtered records.
 
 ### 5. Core: Describe what you have
 
@@ -112,21 +113,34 @@ print(f"\n# {len(lengths)} records, "
       f"mean {sum(lengths) / len(lengths):.1f}", file=sys.stderr)
 ```
 
+And run it:
+
 ```bash
-python3 scripts/summarise.py out/Danaus.COI-5P.fas > 
-cat out/Danaus.COI-5P.tsv # or open in something that views TSV tables, e.g. RStudio or excel
+python3 scripts/summarise.py out/Danaus.COI-5P.fas > out/Danaus.COI-5P.tsv
+more out/Danaus.COI-5P.tsv # or open in something that views TSV tables, e.g. RStudio or excel
 ```
-You should see the 2 records, both with the same COI-5P length and GC content.
+You should see the 379 records, with their ID, sequence lengths and GC content. 
+
+> Why is the ID formatted the way it is? Could this be improved? How?
 
 ### 6. Stretch: Translate, and find out what the reading frame is
 
+Create `scripts/tp1_translate_frames.py`
+
 ```python
+import sys
 from Bio import SeqIO
 
-record = next(SeqIO.parse("out/Danaus.COI-5P.fas", "fasta"))
+record = next(SeqIO.parse(sys.argv[1], "fasta"))
 for frame in range(3):
     protein = record.seq[frame:].translate(table=5)   # invertebrate mitochondrial
     print(frame, protein.count("*"), protein[:40])
+```
+
+And run it:
+
+```bash
+python3 scripts/tp1_translate_frames.py out/Danaus.COI-5P.fas
 ```
 
 > Which frame gives the fewest stop codons? Now change `table=5` to the default `table=1`. What
