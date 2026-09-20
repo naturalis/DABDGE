@@ -116,13 +116,10 @@ print(f"\n# {len(lengths)} records, "
 ```
 
 ```bash
-python3 scripts/summarise.py out/Danaus.COI-5P.fas > out/Danaus.COI-5P.tsv
+python3 scripts/summarise.py out/Danaus.COI-5P.fas > 
+cat out/Danaus.COI-5P.tsv # or open in something that views TSV tables, e.g. RStudio or excel
 ```
-<!-- TODO: RV to verify --> you should see roughly 10^3 records, most of them near one expected
-COI-5P length.
-
-> COI-5P is a protein-coding fragment of a fixed expected length. How many of your records have it?
-> What are the short ones, and should they be in the file at all?
+You should see the 2 records, both with the same COI-5P length and GC content.
 
 ### 6. Stretch: Translate, and find out what the reading frame is
 
