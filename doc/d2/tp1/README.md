@@ -8,27 +8,20 @@ Yesterday we said that FASTA has nowhere to put metadata, so people put it in th
 and that every downstream script therefore has to parse that line. This morning you write those
 scripts.
 
-> **If you are behind:** From step 5 onwards, start from
-> `data/checkpoints/Danaus.COI-5P.fas`. Using this checkpoint is expected.
-
 Set up your working directory
 -----------------------------
 
-Everything you make today goes in one place, because on Friday afternoon you will package it.
+Everything you do today happens in one place: inside the downloaded repository, with the environment
+activated. Consult the repository's root README.md for how to do that.
 
-```bash
-mkdir -p ~/dabdge-w2/{data,scripts,out}
-cd ~/dabdge-w2
-```
-
-Check that Biopython is available:
+When all is set up, check that Biopython is available:
 
 ```bash
 python3 -c "import Bio; print(Bio.__version__)"
 ```
 
 If that fails, create and activate the conda environment described in
-[the repository README](../../../README.md).
+[the repository README](../../../README.md#preparations).
 
 ### 1. Core: Get some sequences
 
@@ -36,7 +29,7 @@ We will use a BOLD v3-era FASTA snapshot for a genus with plenty of records, so 
 have something to bite on. Use *Danaus*.
 
 ```bash
-cp /path/to/your/DABDGE/data/Danaus.v3.fas data/Danaus.fas
+cp data/Danaus.v3.fas data/Danaus.fas
 ```
 
 > BOLD v3 was retired in July 2026 and no longer serves this FASTA endpoint. The file in this
@@ -46,11 +39,9 @@ cp /path/to/your/DABDGE/data/Danaus.v3.fas data/Danaus.fas
 Look at what you have before you write any code:
 
 ```bash
-head -2 data/Danaus.fas
-grep -c '>' data/Danaus.fas
+grep '>' data/Danaus.fas
 ```
-<!-- TODO: RV to verify --> you should see roughly 10^3 records, most of them with BOLD-style
-definition lines.
+You should see four records, with BOLD v3-style definition lines.
 
 ### 2. Core: Read the definition line with shell tools
 
@@ -60,8 +51,7 @@ convention, not a standard, but it is enough for a first pass:
 ```bash
 grep '>' data/Danaus.fas | cut -f 3 -d '|' | sort | uniq -c | sort -rn
 ```
-<!-- TODO: RV to verify --> you should see roughly 10^0 to 10^1 marker groups, most of them from
-one dominant marker.
+You should see a couple of marker groups, one group being the dominant marker in BOLD
 
 > How many markers are in the file? Did you expect more than one? What would have told you in
 > advance?
@@ -78,7 +68,9 @@ you filtered on. A FASTA record spans an unpredictable number of lines, so you m
 
 ### 4. Core: Filter with Biopython
 
-Create `scripts/filter_marker.py`:
+Copy the code below, paste it into a text editor, and save it as `scripts/filter_marker.py`.
+(You will find that the script already exists as a fallback in the repository - we do this
+simply to get comfortable with saving plain text code and running it.)
 
 ```python
 import sys
@@ -99,10 +91,7 @@ Run it:
 python3 scripts/filter_marker.py data/Danaus.fas COI-5P > out/Danaus.COI-5P.fas
 grep -c '>' out/Danaus.COI-5P.fas
 ```
-<!-- TODO: RV to verify --> you should see roughly 10^3 records, most of them COI-5P sequences.
-
-> Older versions of this script opened files with `open(path, "rU")`. That mode was removed in
-> Python 3.11. Code rots; this is the mild version of the problem you will see again in TP2.5.
+You should see the number 2, i.e. the count of filtered records.
 
 ### 5. Core: Describe what you have
 
@@ -124,13 +113,10 @@ print(f"\n# {len(lengths)} records, "
 ```
 
 ```bash
-python3 scripts/summarise.py out/Danaus.COI-5P.fas > out/Danaus.COI-5P.tsv
+python3 scripts/summarise.py out/Danaus.COI-5P.fas > 
+cat out/Danaus.COI-5P.tsv # or open in something that views TSV tables, e.g. RStudio or excel
 ```
-<!-- TODO: RV to verify --> you should see roughly 10^3 records, most of them near one expected
-COI-5P length.
-
-> COI-5P is a protein-coding fragment of a fixed expected length. How many of your records have it?
-> What are the short ones, and should they be in the file at all?
+You should see the 2 records, both with the same COI-5P length and GC content.
 
 ### 6. Stretch: Translate, and find out what the reading frame is
 
