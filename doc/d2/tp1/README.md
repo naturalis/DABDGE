@@ -54,8 +54,7 @@ convention, not a standard, but it is enough for a first pass:
 ```bash
 grep '>' data/Danaus.fas | cut -f 3 -d '|' | sort | uniq -c | sort -rn
 ```
-<!-- TODO: RV to verify --> you should see roughly 10^0 to 10^1 marker groups, most of them from
-one dominant marker.
+You should see a couple of marker groups, one group being the dominant marker in BOLD
 
 > How many markers are in the file? Did you expect more than one? What would have told you in
 > advance?
