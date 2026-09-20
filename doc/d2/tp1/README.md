@@ -32,7 +32,7 @@ We will use a BOLD v3-era FASTA snapshot for a genus with plenty of records, so 
 have something to bite on. Use *Danaus*.
 
 ```bash
-cp /path/to/your/DABDGE/data/Danaus.v3.fas data/Danaus.fas
+cp data/Danaus.v3.fas data/Danaus.fas
 ```
 
 > BOLD v3 was retired in July 2026 and no longer serves this FASTA endpoint. The file in this
