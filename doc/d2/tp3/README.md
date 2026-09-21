@@ -8,9 +8,6 @@ This morning you found out what is missing from records other people made. This 
 annotate a table yourself, and discover that the hard part is not filling fields in. It is deciding
 what the fields mean.
 
-> **If you are behind:** Start from `data/checkpoints/sample-metadata.csv`. Using this checkpoint is
-> expected.
-
 Part A: a real table into Darwin Core
 -------------------------------------
 
