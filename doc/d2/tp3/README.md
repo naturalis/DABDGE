@@ -1,33 +1,31 @@
 TP2.3 Annotation with standard vocabularies
 ===========================================
 
-**Thursday 14:00-15:15, roughly 1 h 15 min.** No separate submission; the table you build here is
-material for Q3 tomorrow.
+**Thursday 14:00-15:15, roughly 1 h 15 min.**
 
-This morning you found out what is missing from records other people made. This afternoon you
-annotate a table yourself, and discover that the hard part is not filling fields in. It is deciding
-what the fields mean.
+This morning you found out what is missing or ambiguous in records other people made. This 
+afternoon you annotate a table yourself, and discover that the hard part is not filling 
+fields in. It is deciding what the fields mean: the semantics.
 
 Part A: a real table into Darwin Core
 -------------------------------------
 
 ### 1. Core: Read the table
 
-In `data/` you will find a sample metadata table taken from a published study: collection sites,
-dates, coordinates, and per-sample sequencing yields.
+In `data/` you will find a sample metadata table taken from the Deepwater Horizon study: 
+collection sites, dates, coordinates, and per-sample sequencing yields.
 
 ```r
 library(dplyr); library(readr)
 
 samples <- read_csv("data/sample-metadata.csv")
-glimpse(samples)
+View(samples)
 ```
-<!-- TODO: RV to verify --> you should see roughly 10^1 to 10^2 records, most of them one row per
-sample with mixed metadata fields.
+You should see 11 records.
 
-> Before mapping anything: what is each row one of? A site, a sample, a sequencing run, or a
-> specimen? The answer determines every mapping decision that follows, and the original table does
-> not state it.
+> Before mapping anything: what is each row one of? A site, a sample, a sequencing run, 
+> or a specimen? The answer determines every mapping decision that follows, and the 
+> original table does not state it.
 
 ### 2. Core: Map the easy columns
 
@@ -41,8 +39,8 @@ the mapping down explicitly, as a table rather than in your head.
 | `date` | `eventDate` | ISO 8601 |
 | ... | | |
 
-<!-- TODO: RV to verify --> you should see roughly 10^0 to 10^1 mapped records, most of them direct
-column-to-term matches.
+You should be able to map five columns as basically direct column-to-term matches, while
+the rest are more ambiguous.
 
 Two rules worth following now and for the rest of your career:
 
@@ -54,9 +52,9 @@ Two rules worth following now and for the rest of your career:
 
 Some columns will have no obvious home. Work out what to do with each.
 
-> The oiling status of a beach. The number of reads passing quality filters. The preservation method.
-> Which of these is a property of the event, which of the sample, and which of the data product? Does
-> Darwin Core have a place for all three?
+> The oiling status of a beach. The number of reads passing quality filters for each 
+> primer. Which of these is a property of the event, which of the sample, and which of the 
+> data product? Does Darwin Core have a place for all three?
 
 The honest answer is that Darwin Core is a vocabulary for occurrences and specimens, not for
 sequencing runs, and that environmental context belongs in
@@ -65,19 +63,31 @@ normal. Knowing which standard owns which column is the skill.
 
 ### 4. Core: Where a term comes from
 
-Take one environmental descriptor from your table and find an ENVO term for it:
+Take an environmental descriptor from your table and find an ENVO term for it:
 
 ```r
 library(jsonlite)
 res <- fromJSON(paste0(
-  "https://www.ebi.ac.uk/ols4/api/search?q=coastal%20sediment&ontology=envo"))
+     "https://www.ebi.ac.uk/ols4/api/search?q=oil%20spill&ontology=envo"))
 res$response$docs |> as_tibble() |> select(label, obo_id, description)
 ```
-<!-- TODO: RV to verify --> you should see roughly 10^1 records, most of them candidate ENVO terms
-that need definition-level checking.
 
-> Read the definitions of the top three hits. Are they the same concept at different granularities,
-> or different concepts with similar labels? Which would you use, and what would you lose?
+You should a result that is possibly a useful hit. But what are the considerations here?
+
+First, "Pre-spill" and "Post-spill" describe when a sample was taken relative to an event, 
+not what the sample is. No ENVO class captures that, and none should. The `condition` 
+column is better kept as a project-specific field, or put in `eventRemarks` or 
+`dynamicProperties` in Darwin Core terms, with a reference to the Deepwater Horizon event.
+
+Second, you could use ENVO where it does fit, as a material annotation (MIxS 
+`env_medium`). "Petroleum enriched sediment" (ENVO:00002115) would suit a post-spill 
+sample only if oil was actually documented at that site. Post-spill does not mean oiled: 
+Ryan Ct and Dauphin Island Bay have read yields close to their pre-spill values, while 
+Bayfront Park and Belleair Boulevard collapsed. The pre-spill samples would get a plain 
+sediment or beach sand term.
+
+> What you should see here is the difference between sampling-time context and a property 
+> of the sample
 
 ### 5. Core: Produce the annotated table
 
@@ -92,12 +102,11 @@ annotated <- samples |>
 
 write_csv(annotated, "out/samples-dwc.csv")
 ```
-<!-- TODO: RV to verify --> you should see roughly 10^1 to 10^2 records, most of them mapped Darwin
-Core rows with selected empty fields left explicit.
+You should see the same records again, but mapped to DarwinCore terms.
 
-> You just wrote `NA` into `coordinateUncertaintyInMeters`. That is the right thing to do and it is
-> also an admission. What is the difference between a field that is absent and a field that is
-> explicitly empty? Which is more useful to a reuser?
+> You just wrote `NA` into `coordinateUncertaintyInMeters`. That is the right thing to do 
+> and it is also an admission. What is the difference between a field that is absent and 
+> a field that is explicitly empty? Which is more useful to a reuser?
 
 Part B: reading an ontology
 ---------------------------
