@@ -121,8 +121,9 @@ term$results$name
 term$results$definition$text
 term$results$aspect
 ```
-<!-- TODO: RV to verify --> you should see roughly 10^0 records, most of them one GO term with a
-definition and ontology aspect.
+
+You should see a single record (a `list`) for which we lookup its name, definition text,
+and aspect.
 
 > Read the definition. Now imagine a gene annotated to this term. What exactly is being claimed about
 > it, and what is not?
