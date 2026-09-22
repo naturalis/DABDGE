@@ -133,7 +133,7 @@ identifiers.
 The data life cycle
 -------------------
 
-![](lecture1/data-life-cycle.png)
+![](lecture1/data-life-cycle.svg)
 
 - **Plan** - what will be measured, and what metadata will be captured alongside it
 - **Collect** - specimens, reads, images, sensor streams
