@@ -4,12 +4,12 @@ The anatomy of a biological record
 Where we are
 ------------
 
-![](lecture1/lifecycle-arc.png)
+![](lecture1/lifecycle-arc.svg)
 
 DABDGE follows a story arc, and we are now at the second stop:
 
 - **Part 1** - Data generation and deposit. Where do biological data come from, and where do they go?
-- **Part2 2** - Data architecture and FAIR. **How is a biological record structured, made interoperable,
+- **Part 2** - Data architecture and FAIR. **How is a biological record structured, made interoperable,
   and used?**
 - **Part 3** - Data analysis and inference. How do we extract biological meaning from data?
 - **Part 4** - Data application and integration. How does it all come together in a real biodiversity
