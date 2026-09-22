@@ -20,12 +20,12 @@ Why I am here: GENE2ECO
   - **EMBL-EBI** runs repositories (ENA, MGnify)
   - **Naturalis** anchors data to organisms (collections, BOLD)
 
-Where we are
-------------
+Where we are in "Data Analysis from Genes to Ecosystems"
+--------------------------------------------------------
 
 ![](lecture1/lifecycle-arc.svg)
 
-DABDGE follows a story arc, and we are now at the second stop:
+The course follows a story arc, and we are now at the second stop:
 
 - **Part 1** - Data generation and deposit. Where do biological data come from, and where do they go?
 - **Part 2** - Data architecture and FAIR. **How is a biological record structured, made interoperable,
