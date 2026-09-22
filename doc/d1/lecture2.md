@@ -1,6 +1,8 @@
 From record to network
 ======================
 
+This content is also available as a [slide deck](https://docs.google.com/presentation/d/1JfOEk43D1kyPKCQE-BBP1h9rGpBEIcNaR575aEI0mXc/edit?usp=sharing)
+
 Where we left off
 -----------------
 
