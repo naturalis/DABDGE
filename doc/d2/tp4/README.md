@@ -3,20 +3,18 @@ TP2.4 Cross-database integration
 
 **Thursday 15:30-17:10, roughly 1 h 40 min. Q3 drafted in class, submitted end of day Friday.**
 
-One specimen, or one sample, described in several resources at once. Your job is to establish that
-they are the same thing, and then to write down every way in which the resources disagree about it.
-
-The disagreements are the result. Nobody is being careless.
-
-> **If you are behind:** Start from `data/checkpoints/linked-record.csv`. Using this checkpoint is
-> expected.
+One specimen, or one sample, described in several resources at once. Your job is to 
+establish that they are the same thing, and then to write down every way in which the 
+resources disagree about it. The disagreements are the result. Nobody is being careless.
 
 ### 1. Core: Pick your starting point
 
-Use the prepared specimen chain for this block: start from a BOLD record for *Danaus plexippus*,
-follow the sequence to GenBank, then follow the taxon into GBIF and WoRMS.
+Use the prepared specimen chain for this block: start from a BOLD record for 
+*Danaus plexippus*, follow the sequence to GenBank, then follow the taxon into GBIF and 
+WoRMS.
 
-Write down your starting identifier before you do anything else. Everything hangs off it.
+Write down your starting identifier before you do anything else. The identifier is the
+hook that everything else hangs off.
 
 ### 2. Core: Follow the links that exist
 
@@ -33,14 +31,13 @@ bold <- bold.fetch(
   identifiers = head(bold_ids$processid, 200)
 )
 ```
-<!-- TODO: RV to verify --> you should see roughly 10^2 records, most of them BOLD entries linked
+You should see at most 200 records, most of them BOLD entries linked
 to a smaller set of cross-resource identifiers.
 
-> BOLD v5 is a tokenised API under `portal.boldsystems.org`; `bold.public.search()` wraps the first
-> query stages and `bold.fetch()` wraps retrieval. If `bold.fetch()` fails because your account has no
-> key, ask for the front-led copy of the prepared chain and continue from that.
-
-<!-- TODO: RV to review -->
+> BOLD v5 is a tokenised API under `portal.boldsystems.org`; `bold.public.search()` wraps 
+> the first query stages and `bold.fetch()` wraps retrieval. If `bold.fetch()` fails 
+> because your account has no key, ask for the front-led copy of the prepared chain and 
+> continue from that.
 
 Follow the outbound links. A BOLD record often carries a GenBank accession; a GenBank record often
 carries a specimen voucher; a GBIF occurrence carries a dataset key and sometimes an
@@ -69,11 +66,13 @@ gn <- fromJSON(paste0("https://verifier.globalnames.org/api/v1/verifications/",
                       "Danaus%20plexippus"))
 gn$names$bestResult |> as_tibble()
 ```
+
 **Intentional failure.** The WoRMS lookup in this example can return HTTP 204 (no content), and then
 `fromJSON()` throws because there is nothing to parse. That failure is the answer. It looks like an
 empty response and a parse error, not like a broken script.
-<!-- TODO: RV to verify --> you should see roughly 10^0 to 10^1 records, most of them one
-name-matching result per service when content is available.
+
+You should see one or only a few records, most of them one name-matching result per 
+service when content is available.
 
 > Four resources, four identifiers for one organism: a GBIF usage key, an AphiaID, an NCBI taxid and
 > a BOLD taxon id. Reconciliation is mapping between identifier spaces. It is not correcting anyone.
