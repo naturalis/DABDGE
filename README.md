@@ -17,7 +17,7 @@ lifecycle arc:
 **Generation and deposit** (W1, Pedro) → **Architecture and FAIR** (W2, this repository) →
 **Analysis and inference** (W3, Pedro) → **Application and integration** (W4, Filipe).
 
-This block is week 2 of that arc. Its anchor question is:
+This block is part 2 of that arc. Its anchor question is:
 
 > **How is a biological record structured, made interoperable, and used?**
 
@@ -39,9 +39,9 @@ following:
 - a working laptop, any major operating system is fine
 - [R](https://cran.r-project.org/) and [RStudio](https://posit.co/products/open-source/rstudio/)
   (open source edition), already installed during week 1
-- [Python 3](https://www.python.org/) with [Biopython](https://biopython.org/) and
-  [Jupyter](https://jupyter.org/), provided in the conda environment for this repository
-- a plain text editor you are comfortable with
+- [Python 3](https://www.python.org/) with [Biopython](https://biopython.org/), provided in the
+  conda environment for this repository
+- a plain text editor you are comfortable with (for example in RStudio)
 
 Get the course materials by opening this repository on GitHub, clicking the green **Code** button,
 and downloading the ZIP. Unpack it somewhere you can find again, for example in your home folder,
@@ -57,29 +57,29 @@ conda env create -f environment.yml
 conda activate dabdge
 ```
 
-No accounts are needed for the public databases used here. All retrieval is done over public APIs.
+No accounts are strictly speaking needed for the public databases used here, although a
+BOLD workbench account would be useful. All retrieval is done over public APIs.
 
 ### Schedule
 
-#### Day 1 - How a biological record is built (Wed 23 September 2026, 6 h T)
+#### Day 1 - How a biological record is built (Wed 23 September 2026)
 
-- **09:00-12:00** Lecture I: [The anatomy of a biological record](doc/d1/lecture1.md)
+- **10:00** Lecture I: [The anatomy of a biological record](doc/d1/lecture1.md)
   - data architecture: rows, columns, identifiers; sample sheets versus feature tables
   - the central dogma as a data pipeline, and the formats that carry each step (FASTA, FASTQ,
     GenBank, GFF)
   - identifiers and accessions: what an accession promises, record versioning, submission
   - one record, many serialisations: why interoperability is a format problem and an identifier
     problem at the same time
-- **14:00-17:00** Lecture II: [From record to network](doc/d1/lecture2.md)
+- **14:00** Lecture II: [From record to network](doc/d1/lecture2.md)
   - public database structure: NCBI/ENA, UniProt, GBIF, BOLD
   - metadata, ontologies and controlled vocabularies: Darwin Core, GO, ENVO, taxonomy identifiers
   - why annotation quality bounds inference, worked through three cases
   - FAIR in depth, provenance, versioning and curation/QA-QC concepts
   - multi-source integration: what cross-scale interpretation can and cannot claim
 
-Protect a 10-15 minute break in the middle of each block.
 
-#### Day 2 - Retrieval, annotation and integration (Thu 24 September 2026, 8 h TP)
+#### Day 2 - Retrieval, annotation and integration (Thu 24 September 2026)
 
 | | Block | Time | Minutes |
 | --- | --- | --- | --- |
@@ -92,8 +92,6 @@ Protect a 10-15 minute break in the middle of each block.
 | TP2.3 | [Annotation with standard vocabularies](doc/d2/tp3) | 14:00-15:15 | 75 |
 | | Break | 15:15-15:30 | |
 | TP2.4 | [Cross-database integration](doc/d2/tp4) | 15:30-17:10 | 100 |
-| | Break | 17:10-17:20 | |
-| TP2.5 | [Packaging](doc/d2/tp5) | 17:20-18:00 | 40 |
 
 - **TP2.1** FASTA in and out, basic statistics, translation, marker filtering, then similarity
   reading from a supplied hits table.
@@ -104,15 +102,11 @@ Protect a 10-15 minute break in the middle of each block.
   walk its subgraph, ending with a short GO identifier check.
 - **TP2.4** link one specimen across resources, reconcile the names, list the discrepancies, and
   draft **Q3** in class.
-- **TP2.5** package the day's work as a deposit that would pass the morning audit, then submit a
-  zip through `{{SUBMISSION_CHANNEL}}`.
 
 ### Assessment
 
-This block contributes two of the six continuous assessment items for the CU (10% each). Both are
-short: two to four targeted questions plus the figure or table you produced. Expect 30 to 45 minutes
-to finalise, not a full evening. Submit reproducible documents (R Markdown or Quarto) where code is
-involved, or a single page where only interpretation is required.
+Assessment for this block will be in the form of a few questions on the final exam. The deliverables
+described below are merely for practice purposes but are ungraded.
 
 | ID | Submit by | Content |
 | -- | --------- | ------- |
@@ -126,16 +120,6 @@ point is transparent and responsible use, not abstinence. Observations from this
 cross-module AI reflection submitted with Q6 in week 4.
 
 ### Teaching datasets
-
-Practicals run on the recurring case-study anchor for the CU where possible, so that the same system
-is seen through a different lens each week. Where an exercise needs a dataset with a specific
-property that the anchor does not have, the substitute is named in the practical and the reason is
-given.
-
-- `data/anchor/` - records from the CU's recurring coastal and marine anchor site
-- `data/worked-example/` - the multi-deposit worked example used in the day 1 lectures and in TP2.2
-- `data/toy-db/` - notes and provenance for the small TP2.1 similarity reference database (`data/toy-reference.fas`)
-- `data/checkpoints/` - checkpoint files and folders used to rejoin each Day 2 practical block
 
 All datasets in this repository are subsets, prepared for teaching, of openly licensed published
 data. Provenance and licence for each are recorded in the README of its directory, which is itself
@@ -189,5 +173,4 @@ Parts of these materials are adapted from
 sequence data formats, database APIs, phylogenetic data representation, semantics and version
 control. Adaptations, cuts and additions are documented per file.
 
-Content is released under the [MIT licence](LICENSE) unless a dataset directory states otherwise.
-Corrections are welcome by email or through `{{SUBMISSION_CHANNEL}}`.
+Content is released under the [CC0](LICENSE) unless a dataset directory states otherwise.
