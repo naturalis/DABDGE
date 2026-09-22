@@ -1,6 +1,8 @@
 Integrating data architecture into bioscience workflows: standards and best practices
 =====================================================================================
 
+This content is also available as a [slide deck](https://docs.google.com/presentation/d/1QJDnopogINN2C5omAbb3OnBrT-yUU6uT_L915wNBMbU/edit?usp=sharing)
+
 About me
 --------
 

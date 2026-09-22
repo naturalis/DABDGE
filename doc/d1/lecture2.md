@@ -73,8 +73,10 @@ not collect.
 Programmatic access
 -------------------
 
-Every resource we use today has an API, which means every retrieval you do by clicking can be done
-reproducibly instead.
+![](lecture2/api.png)
+
+Every resource we discuss today has an API, which means every retrieval you do by clicking 
+can be done reproducibly instead.
 
 ```bash
 # GBIF: occurrences of a genus, as JSON
@@ -95,6 +97,8 @@ of clicks is not.
 
 BOLD: three record types in one
 -------------------------------
+
+![](lecture2/dna-barcoding.png)
 
 [BOLD](https://portal.boldsystems.org/) is worth looking at structurally, because a single BOLD record
 binds together things that live in separate databases everywhere else:
@@ -133,6 +137,8 @@ are Filipe's territory in week 4, and they are the substance of your final integ
 
 A name is not an identifier
 ---------------------------
+
+![](lecture2/Cladosporium_cladosporioides.jpg)
 
 `Cladosporium cladosporioides` is a hypothesis, expressed in Latin, that may have been revised twice
 since the record was written.
