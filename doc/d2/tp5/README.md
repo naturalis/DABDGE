@@ -9,20 +9,13 @@ This morning you audited somebody's deposit and found it wanting. It would be po
 day with a folder that would fail the same audit. So spend the last forty minutes making one that
 passes.
 
-> **If you are behind:** Compare your folder against
-> `data/checkpoints/dabdge-w2-example/`. Using this checkpoint is expected.
-
 ### 1. Core: Look at what you have
 
 ```bash
-cd ~/dabdge-w2
+cd /path/to/DABDGE/out
 find . -type f | sort
 ```
-<!-- TODO: RV to verify --> you should see roughly 10^1 records, most of them files spread across
-`data/`, `scripts/` and `out/`.
-
-Most likely: a few scripts, several downloaded files, some intermediate output, and at least one
-thing called `final2.csv`.
+You should see a few files.
 
 > Hand that folder to the person sitting next to you. Can they tell which file is input, which is
 > output, and which was a mistake? That is the audit, and it takes ten seconds.
