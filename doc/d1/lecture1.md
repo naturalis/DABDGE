@@ -8,37 +8,40 @@ Where we are
 
 DABDGE follows a story arc, and we are now at the second stop:
 
-- **Week 1** - Data generation and deposit. Where do biological data come from, and where do they go?
-- **Week 2** - Data architecture and FAIR. **How is a biological record structured, made interoperable,
+- **Part 1** - Data generation and deposit. Where do biological data come from, and where do they go?
+- **Part2 2** - Data architecture and FAIR. **How is a biological record structured, made interoperable,
   and used?**
-- **Week 3** - Data analysis and inference. How do we extract biological meaning from data?
-- **Week 4** - Data application and integration. How does it all come together in a real biodiversity
+- **Part 3** - Data analysis and inference. How do we extract biological meaning from data?
+- **Part 4** - Data application and integration. How does it all come together in a real biodiversity
   question?
 
-Last week you saw how sequences, occurrences and measurements are produced, and you learned to read
-a CSV into R and package your work as R Markdown or Quarto. This week we open the records themselves.
-Next week you will compute on them.
+Previously, you saw how sequences, occurrences and measurements are produced, and you 
+learned to read a CSV into R and package your work as R Markdown or Quarto. Now we open 
+the records themselves. Next week you will compute on them.
 
-> By the end of tomorrow you should be able to take any biological record you meet for the rest of
-> the master's and answer four questions about it: what identifies it, what it asserts, who asserted
-> it, and what it can be joined to.
+> By the end of tomorrow you should be able to take any biological record you meet for 
+> the rest of the master's and answer four questions about it: what identifies it, what 
+> it asserts, who asserted it, and what it can be joined to.
 
 A case to open with
 -------------------
 
-A 2012 study of benthic microbial eukaryote communities in the Gulf of Mexico deposited its data in
-three places at once:
+![](lecture1/deepwater-horizon.jpg)
+
+A 2012 study of shifts in benthic microbial eukaryote communities caused by the Deepwater
+Horizon oil spill in the Gulf of Mexico deposited its data in three places at once:
 
 - **Dryad**, under a DOI
 - **MG-RAST**, under a submission ID
 - **NCBI SRA**, under an accession number
 
-So there are three depositions, each with its own identifier type, at different granularities, under different curation regimes, for a single study.
+So there are three depositions, each with its own identifier type, at different 
+granularities, under different curation regimes, for a single study.
 
-> Why three? What does each deposit make possible that the others do not? And which of the three
-> would you go to if you wanted to re-run the analysis?
+> Why three? What does each deposit make possible that the others do not? And which of 
+> the three would you go to if you wanted to re-run the analysis?
 
-We will go into this in the afternoon, after we have the vocabulary.
+We will go into this in the afternoon lecture, after we have the words to talk about this.
 
 (**HM Bik, KM Halanych, J Sharma & WK Thomas**, 2012. Dramatic shifts in benthic microbial eukaryote
 communities following the Deepwater Horizon oil spill. _PLoS ONE_ **7**(6): e38550.
@@ -59,11 +62,13 @@ of analysis, the opposite is closer to the truth: **the content is usually the l
 part**. A sequence of A, C, G and T tells you nothing until you know what organism it came from,
 which marker it represents, and who decided so.
 
-> Take any figure from a paper you have read recently. Which part of it comes from content, and
-> which part comes from metadata?
+> Take any figure from a paper you have read recently. Which part of it comes from 
+> content, and which part comes from metadata?
 
 Rows, columns, identifiers
 --------------------------
+
+![](lecture1/record.png)
 
 Nearly all biological data end up in tables, and nearly all confusion about biological data comes
 from not knowing what a row is.
@@ -72,8 +77,9 @@ from not knowing what a row is.
 - A **column** is one variable measured on every thing
 - One column is (or should be) the **key**: the identifier that other tables can point at
 
-This is the "tidy data" convention. It is worth being pedantic about it, because every join you
-perform for the rest of this master's depends on the key columns meaning what you think they mean.
+This is the "[tidy data](https://www.jstatsoft.org/article/view/v059i10)" convention. It 
+is worth being pedantic about it, because every join you perform for the rest of this 
+master's depends on the key columns meaning what you think they mean.
 
 ```
 occurrenceID          scientificName        eventDate    decimalLatitude  decimalLongitude
@@ -81,16 +87,16 @@ URN:catalog:XX:1234   Cladosporium sp.      2010-05-12   30.2481          -88.07
 URN:catalog:XX:1235   Enoploides sp.        2010-05-12   30.2481          -88.0759
 ```
 
-> In that fragment, what is the thing that each row is one of? A specimen? An observation? A
-> sequence? The column names tell you, and they were chosen from a standard vocabulary so that they
-> could.
+> In that fragment, what is the thing that each row is one of? A specimen? An observation? 
+> A sequence? The column names tell you, and they were chosen from a standard vocabulary 
+> so that they could.
 
 Sample sheets versus feature tables
 -----------------------------------
 
 ![](lecture1/sample-vs-feature.png)
 
-Two shapes recur across every data type you will meet:
+Two shapes recur across many data types you will meet:
 
 - A **sample sheet**: one row per sample, columns are properties of the sample (site, date, depth,
   treatment, oiling status)
@@ -104,6 +110,8 @@ simply get answers about the wrong samples.
 The join is the analysis
 ------------------------
 
+![](lecture1/beta-diversity.png)
+
 Consider a phylogenetically informed beta diversity measure such as UniFrac. To compute it, you need
 three objects:
 
@@ -114,12 +122,13 @@ three objects:
 In R, `phyloseq` bundles exactly these (plus a taxonomy table) into one object, and refuses to build
 it if the identifiers do not line up. That refusal is a feature.
 
-> The ecological question ("are these communities different?") cannot be asked until a relational
-> question ("do these three objects share a key?") has been answered. Beta diversity is a join before
-> it is a statistic.
+> The ecological question ("are these communities different?") cannot be asked until a 
+> relational question ("do these three objects share a key?") has been answered. Beta 
+> diversity is a join before it is a statistic.
 
-You will do this for real next week, in week 3. Today the point is structural: analyses are
-operations over several linked tables, and the links are made of identifiers.
+You might do this for real at a later point in your studies. Today the point is 
+structural: analyses are operations over several linked tables, and the links are made of 
+identifiers.
 
 The data life cycle
 -------------------
@@ -139,6 +148,8 @@ all. Metadata that was never recorded cannot be recovered later.
 
 The central dogma as a data pipeline
 ------------------------------------
+
+![](lecture1/central-dogma.png)
 
 Every step of the central dogma has a file format attached to it, and the formats are how the
 biology moves between programs.
@@ -167,13 +178,13 @@ The minimal format. A definition line starting with `>`, then sequence.
 AACATTATATTTTATTTTTGGAATTTGAGCAGGAATAGTAGGAACTTCTTTAAGATTATTAATTCGAACAGAATTA...
 ```
 
-Notice what just happened. FASTA has no metadata fields, so people invented a convention of stuffing
-pipe-delimited metadata into the definition line. Every database does this differently. Every
-downstream script must therefore parse the definition line, and every such parser is a small,
-fragile, undocumented standard.
+Notice what just happened. FASTA has no metadata fields, so people invented a convention 
+of stuffing pipe-delimited metadata into the definition line. Every database does this 
+differently. Every downstream script must therefore parse the definition line, and every 
+such parser is a small, fragile, undocumented standard.
 
-> This is the cheapest possible illustration of what standards are for. When a format has no place
-> to put the metadata, the metadata does not disappear. It goes somewhere worse.
+> This is the cheapest possible illustration of what standards are for. When a format has 
+> no place to put the metadata, the metadata does not disappear. It goes somewhere worse.
 
 The FASTQ format
 ----------------
@@ -257,7 +268,7 @@ lesson as the sample sheet: the data are fine, the link has broken.
 Orientation only
 ----------------
 
-You will meet these; you do not need them this week.
+You will likely meet these at some point in your career, but you do not need them this week.
 
 - **SAM / BAM / CRAM** - reads aligned to a reference, with a CIGAR string describing how each read
   matches and bitwise flags describing its status
@@ -270,8 +281,8 @@ and **CU4 Omics and Genetic Approaches in Model Organisms**.
 What an accession promises
 --------------------------
 
-An accession is not a name. It is a **commitment by an institution** that a particular string will
-continue to resolve to a particular record.
+An accession is not a name. It is a **commitment by an institution** that a particular 
+string will continue to resolve to a particular record.
 
 The International Nucleotide Sequence Database Collaboration (INSDC) ties NCBI GenBank, the European
 Nucleotide Archive and DDBJ together: submit to one and the record appears in the others, with the
