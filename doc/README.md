@@ -12,17 +12,16 @@ The anchor question for the two days is:
 
 Day 1 answers the first part in lectures: what a record is made of, how it is identified, how it is
 serialised, and what it can be joined to. Day 2 answers the rest at the keyboard: you retrieve
-records, audit what is missing from them, annotate a table of your own, link one sample across
-several resources, and package the result so that it would survive the audit you performed in the
-morning.
+records, audit what is missing from them, annotate a table of your own, and link one sample across
+several resources.
 
 Contents
 --------
 
 | Folder | What is in it |
 | ------ | ------------- |
-| [d1](d1/README.md) | Day 1, Wednesday 23 September 2026. Two lectures, 6 h of theory. |
-| [d2](d2/README.md) | Day 2, Thursday 24 September 2026. Five practicals, 8 h at the keyboard. |
+| [d1](d1/README.md) | Day 1, Wednesday 23 September 2026. Two lectures. |
+| [d2](d2/README.md) | Day 2, Thursday 24 September 2026. Four practicals. |
 | [about](about/README.md) | Background PDFs: the CU programme and the MSc programme flyer. |
 
 How to read this
