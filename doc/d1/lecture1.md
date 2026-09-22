@@ -1,5 +1,24 @@
-The anatomy of a biological record
-==================================
+Integrating data architecture into bioscience workflows: standards and best practices
+=====================================================================================
+
+About me
+--------
+
+- Rutger Vos, head of the Data Competence Center, [Naturalis Biodiversity Center](https://www.naturalis.nl), Leiden
+- Background: phylogenetics and biodiversity informatics
+- Work on data standards (NeXML, Darwin Core, FAIR), TreeBASE, DNA barcoding infrastructure
+- [Biodiversity Genomics Europe](https://biodiversitygenomics.eu) (BGE), with Filipe Costa
+
+Why I am here: GENE2ECO
+-----------------------
+
+- Horizon Europe Twinning project, coordinated by CBMA (lead: Cláudia Pascoal)
+- Partners: EMBL-EBI (Rob Finn) and Naturalis (me)
+- Goal: integrate CBMA's molecular and environmental data, from gene to ecosystem, FAIRly
+- Three partners, three stops in the data life cycle:
+  - **CBMA** generates data
+  - **EMBL-EBI** runs repositories (ENA, MGnify)
+  - **Naturalis** anchors data to organisms (collections, BOLD)
 
 Where we are
 ------------
@@ -22,6 +41,28 @@ the records themselves. Next week you will compute on them.
 > By the end of tomorrow you should be able to take any biological record you meet for 
 > the rest of the master's and answer four questions about it: what identifies it, what 
 > it asserts, who asserted it, and what it can be joined to.
+
+This lecture
+------------
+
+Records: what they are made of, how they are laid out, what their identifiers promise.
+
+1. **Records** - the four parts of any biological record
+2. **Tables** - keys, sample sheets, feature tables, joins
+3. **Formats** - the central dogma as a pipeline of file formats
+4. **Identifiers** - accessions, versions, submission
+5. **Serialisation** - same information, different formats
+
+Learning goals
+--------------
+
+By the end we should be able to:
+
+- Split a record into identifier, content, metadata, provenance
+- Explain how identifiers link sample sheets and feature tables
+- Judge how much context a file format carries
+- Explain what an accession promises, and why versions matter
+- Explain why choosing a format is choosing what to lose
 
 A case to open with
 -------------------
