@@ -169,6 +169,8 @@ NCBI and not at all in WoRMS is telling you something true about what WoRMS is f
 The ontology problem
 --------------------
 
+![](lecture2/jersey-kale.jpg)
+
 Now the same problem one level up, for the things you measured rather than the organisms.
 
 When does a plant flower? Four trait databases, four field names:
@@ -187,6 +189,8 @@ one source may be recording dates and another an age in days?
 
 What an ontology is
 -------------------
+
+![](lecture2/ontology.png)
 
 An ontology is a formal naming of the types, properties and relationships in a domain: terms with
 stable identifiers, written definitions, and explicit relations between them.
@@ -282,8 +286,8 @@ are machine-readable and the metadata are public.
 A live audit
 ------------
 
-Back to this morning's puzzle. The Gulf of Mexico study deposited in three places. Let us score one
-of them against the four principles together, live.
+Back to this morning's introduction. The Gulf of Mexico study deposited in three places. 
+Let us score one of them against the four principles together, live.
 
 Things to look for on the landing page:
 
