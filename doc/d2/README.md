@@ -1,17 +1,14 @@
 Day 2: Retrieval, annotation and integration
 ============================================
 
-**Thursday 24 September 2026, 8 h of practicals.** Three submissions come out of today:
-**Q2 by end of day**, **the TP2.5 folder zip by end of day**, and **Q3 drafted in class and
-submitted by end of day Friday**.
+**Thursday 24 September 2026, 8 h of practicals.** Two submissions come out of today:
+**Q2 by end of day** and **Q3 drafted in class and submitted by end of day Friday**.
 
 Yesterday you were shown records. Today you go and get them, find out how much of what you need is
 actually in them, annotate a table yourself, establish that a specimen described in four resources
 is the same specimen, and then leave behind a folder that somebody else could use.
 
-It is a long day, so it is broken into five blocks with breaks between them. Everything you make
-goes into one working directory, `~/dabdge-w2`, because the last forty minutes package it.
-You work in pairs at one laptop and swap at the keyboard between blocks.
+It is a long day, so it is broken into four blocks with breaks between them.
 
 Each block marks steps as Core or Stretch. Stretch steps are optional. If you complete the Core
 steps, you have completed the day. All material stays available afterwards if you want to come back
@@ -31,8 +28,6 @@ Practicals
 | TP2.3 | [Annotation with standard vocabularies](tp3/README.md) | 14:00-15:15 | 75 |
 | | Break | 15:15-15:30 | |
 | TP2.4 | [Cross-database integration](tp4/README.md) | 15:30-17:10 | 100 |
-| | Break | 17:10-17:20 | |
-| TP2.5 | [Packaging](tp5/README.md) | 17:20-18:00 | 40 |
 
 ### [TP2.1 Sequence handling with Biopython](tp1/README.md)
 
@@ -57,13 +52,6 @@ Finish with a short GO identifier check against QuickGO.
 One specimen, described in several resources at once. Establish that they are the same thing, then
 write down every way in which the resources disagree. The disagreements are the result. **Q3 is
 drafted here**, finalised over the weekend.
-
-### [TP2.5 Packaging](tp5/README.md)
-
-Turn the day's folder into a deposit that would pass the audit you performed this morning: a
-structure, a README, recorded provenance and a licence statement. Submit a zip through
-`{{SUBMISSION_CHANNEL}}`. This is the container your Q3 goes in, and the habit that carries into
-the project and the dissertation.
 
 Before you start
 ----------------
