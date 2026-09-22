@@ -26,6 +26,7 @@ bold_ids <- bold.public.search(taxonomy = list("Danaus plexippus"))
 head(bold_ids)
 
 # BCDM records for those ids (requires a BOLD API key configured via bold.apikey())
+# bold.apikey("your_actual_api_key_here")  <- workbench > Edit User Preferences
 bold <- bold.fetch(
   get_by = "processid",
   identifiers = head(bold_ids$processid, 200)
@@ -39,9 +40,9 @@ to a smaller set of cross-resource identifiers.
 > because your account has no key, ask for the front-led copy of the prepared chain and 
 > continue from that.
 
-Follow the outbound links. A BOLD record often carries a GenBank accession; a GenBank record often
-carries a specimen voucher; a GBIF occurrence carries a dataset key and sometimes an
-`associatedSequences` field.
+Follow the outbound links. A BOLD record often carries a GenBank accession (under `insdc_acs`); 
+a GenBank record often carries a specimen voucher; a GBIF occurrence carries a dataset key 
+and sometimes an `associatedSequences` field.
 
 > Build the chain explicitly. Which links were machine-readable, and which did you have to
 > reconstruct by hand from a free-text field?
