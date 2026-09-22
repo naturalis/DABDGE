@@ -6,7 +6,7 @@ About me
 
 - Rutger Vos, head of the Data Competence Center, [Naturalis Biodiversity Center](https://www.naturalis.nl), Leiden
 - Background: phylogenetics and biodiversity informatics
-- Work on data standards (NeXML, Darwin Core, FAIR), TreeBASE, DNA barcoding infrastructure
+- Work on data standards and practices, and research infrastructures
 - [Biodiversity Genomics Europe](https://biodiversitygenomics.eu) (BGE), with Filipe Costa
 
 Why I am here: GENE2ECO
