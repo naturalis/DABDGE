@@ -160,7 +160,7 @@ Reconciliation services
 | ------- | ----- |
 | [GBIF Backbone Taxonomy](https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c) | everything GBIF indexes, with usage keys |
 | [WoRMS](https://www.marinespecies.org/) | marine taxa, with AphiaIDs |
-| [NCBI Taxonomy](https://www.ncbi.nlm.nih.gov/taxonomy) | taxa with sequence data, with taxids |
+| [NCBI Taxonomy](https://www.ncbi.nlm.nih.gov/datasets/taxonomy/) | taxa with sequence data, with taxids |
 | [ChecklistBank](https://www.checklistbank.org/) / COL | published checklists, compared |
 | [GlobalNames](https://globalnames.org/) | name parsing and resolution across sources |
 
