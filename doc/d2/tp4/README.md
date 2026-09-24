@@ -26,7 +26,7 @@ bold_ids <- bold.public.search(taxonomy = list("Danaus plexippus"))
 head(bold_ids)
 
 # BCDM records for those ids (requires a BOLD API key configured via bold.apikey())
-# bold.apikey("your_actual_api_key_here")  <- workbench > Edit User Preferences
+# bold.apikey("your_actual_api_key_here")  <- workbench > Edit User Preferences: 5CD93859-6606-455B-A86A-1931E32763E0
 bold <- bold.fetch(
   get_by = "processid",
   identifiers = head(bold_ids$processid, 200)
