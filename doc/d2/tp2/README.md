@@ -11,9 +11,6 @@ what you need is actually there.
 From here on we work in R, because that is the environment you will use for most of the 
 master's. Python stays where it belongs, in sequence handling.
 
-> **If you are behind:** Start this block from the retrieved records in
-> `data/checkpoints/records/`. Using this checkpoint is expected.
-
 ```r
 library(jsonlite)
 library(dplyr)
