@@ -17,7 +17,7 @@ activated. Consult the repository's root README.md for how to do that.
 When all is set up, check that Biopython is available:
 
 ```bash
-python3 -c "import Bio; print(Bio.__version__)"
+python -c "import Bio; print(Bio.__version__)"
 ```
 
 If that fails, create and activate the conda environment described in
